@@ -20,15 +20,15 @@ const json = `{
       "select": [
         {
           "name": "name",
-          "$": [["h1"]]
+          "query": [["h1"]]
         },
         {
           "name": "description",
-          "$": [["p"]]
+          "query": [["p"]]
         },
         {
           "name": "href",
-          "$": [["a",["attr","href"]]]
+          "query": [["a",["attr","href"]]]
         }
       ]
     }

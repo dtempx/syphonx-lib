@@ -17,24 +17,24 @@ const json = `{
   "actions": [
     {
       "click": {
-        "$": [["button"]]
+        "query": [["button"]]
       }
     },
     {
       "waitfor": {
-        "$": [["h1"]]
+        "query": [["h1"]]
       }
     },
     {
-      "select": [ 
+      "select": [
         {
-          "name": "name",
-           "$": [["h1"]]
+          "name": "title",
+          "query": [["h1"]]
         },
         {
           "name": "description",
-          "$": [["p"]]
-        },
+          "query": [["p"]]
+        }
       ]
     }
   ]
