@@ -43,7 +43,8 @@ function convertActions(actions: unknown): syphonx.Action[] {
 
 function convertClick(obj: unknown): syphonx.Click | undefined {
     if (typeof obj === "string") {
-        return { query: parseMultiQuery(obj) };
+        const query = parseMultiQuery(obj);
+        return query ? { query } : undefined;
     }
     else if (typeof obj === "object" && obj !== null) {
         const { query, ...click } = obj as Record<string, unknown>;
@@ -83,6 +84,7 @@ function convertSelectAction(obj: Record<string, unknown>[]): syphonx.SelectActi
     const select = obj.map(obj => {
         const { query, ...select } = obj;
         select.query = parseMultiQuery(query);
+        // if (!select.query) throw ...
         if (select.select instanceof Array)
             select.select = select.select.map(obj => convertSelect(obj));
         return select;        
@@ -93,6 +95,7 @@ function convertSelectAction(obj: Record<string, unknown>[]): syphonx.SelectActi
 function convertTransform(obj: Record<string, unknown>): syphonx.Transform {
     const { query, ...transform } = obj;
     transform.query = parseSingleQuery(query);
+    // if (!transform.query) throw ...
     return transform as unknown as syphonx.Transform;
 }
 
@@ -108,35 +111,32 @@ function convertWaitForAction(obj: string | Record<string, unknown>): syphonx.Wa
     else {
         const { query, ...waitfor } = obj;
         waitfor.query = parseMultiQuery(query);
+        // if (!waitfor.query) throw ...
         return { waitfor };
     }
 }
 
-function parseMultiQuery(obj: unknown): syphonx.SelectQuery[] {
+function parseMultiQuery(obj: unknown): syphonx.SelectQuery[] | undefined {
     if (typeof obj === "string") {
-        if (obj.startsWith("$("))
-            return [parseJQueryExpression(obj)];
+        if (obj.startsWith("$(")) {
+            const query = parseJQueryExpression(obj);
+            return query ? [query] : undefined;
+        }
         else
             return [[obj]];
     }
-    else {
-        throw new ErrorMessage(`Invalid query expression ${JSON.stringify(obj)}`);
-    }
 }
 
-function parseSingleQuery(obj: unknown): syphonx.SelectQuery {
+function parseSingleQuery(obj: unknown): syphonx.SelectQuery | undefined {
     if (typeof obj === "string") {
         if (obj.startsWith("$("))
             return parseJQueryExpression(obj);
         else
             return [obj];
     }
-    else {
-        throw new ErrorMessage(`Invalid query expression ${JSON.stringify(obj)}`);
-    }
 }
 
-function parseJQueryExpression(text: string): syphonx.SelectQuery {
+export function parseJQueryExpression(text: string): syphonx.SelectQuery | undefined {
     const result = [];
     let expression: Expression | undefined = jsep(text);
     while (expression) {
@@ -152,11 +152,14 @@ function parseJQueryExpression(text: string): syphonx.SelectQuery {
                 expression = memberExpression.object;
             }
             else {
-                throw new ErrorMessage("Invalid selector");
+                return undefined;
             }
         }
+        else {
+            return undefined;
+        }
     }
-    return result as syphonx.SelectQuery;
+    return result.length > 0 ? result as syphonx.SelectQuery : undefined;
 }
 
 export function yamlToJson(obj: any) {
