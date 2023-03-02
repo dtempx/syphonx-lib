@@ -48,6 +48,9 @@ export function parseTemplate(text: string): Template {
         const obj = JSON5.parse(text);
         return obj as Template;
     }
+    else if (text === "") {
+        return { actions: [] };
+    }
     else {
         const obj = yaml.load(text) as any;
         const template = yamlToJson(obj);

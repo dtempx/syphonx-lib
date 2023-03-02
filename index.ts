@@ -1,5 +1,5 @@
 export * from "syphonx-core";
-export * from "./format.js";
+export * from "./render.js";
 export * from "./template.js";
 
-export { parseJQueryExpression } from "./yaml.js";
+export { parseJQuery } from "./yaml.js";

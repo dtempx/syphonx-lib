@@ -119,7 +119,7 @@ function convertWaitForAction(obj: string | Record<string, unknown>): syphonx.Wa
 function parseMultiQuery(obj: unknown): syphonx.SelectQuery[] | undefined {
     if (typeof obj === "string") {
         if (obj.startsWith("$(")) {
-            const query = parseJQueryExpression(obj);
+            const query = parseJQuery(obj);
             return query ? [query] : undefined;
         }
         else
@@ -130,13 +130,13 @@ function parseMultiQuery(obj: unknown): syphonx.SelectQuery[] | undefined {
 function parseSingleQuery(obj: unknown): syphonx.SelectQuery | undefined {
     if (typeof obj === "string") {
         if (obj.startsWith("$("))
-            return parseJQueryExpression(obj);
+            return parseJQuery(obj);
         else
             return [obj];
     }
 }
 
-export function parseJQueryExpression(text: string): syphonx.SelectQuery | undefined {
+export function parseJQuery(text: string): syphonx.SelectQuery | undefined {
     const result = [];
     let expression: Expression | undefined = jsep(text);
     while (expression) {
