@@ -5,7 +5,7 @@ import jsep, { Expression, CallExpression, MemberExpression } from "jsep";
 
 function addClickAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ click: { $: parseMultiQuery(obj) } });
+        template.actions.push({ click: { query: parseMultiQuery(obj) } });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push({ click: convertClick(obj as Record<string, unknown>) });
     else
@@ -14,7 +14,7 @@ function addClickAction(template: Template, obj: unknown) {
 
 function addSelectAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ select: [{ $: parseMultiQuery(obj) }] });
+        template.actions.push({ select: [{ query: parseMultiQuery(obj) }] });
     else if (obj instanceof Array)
         template.actions.push({ select: obj.map(select => convertSelect(select)) });
     else if (typeof obj === "object" && obj !== null)
@@ -28,9 +28,9 @@ function addSnoozeAction(template: Template, obj: unknown) {
 
 function addTransformAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ transform: [{ $: parseSingleQuery(obj) }] });
+        template.actions.push({ transform: [{ query: parseSingleQuery(obj) }] });
     else if (obj instanceof Array)
-        template.actions.push({ transform: obj.map(obj => ({ $: parseSingleQuery(obj) })) });
+        template.actions.push({ transform: obj.map(obj => ({ query: parseSingleQuery(obj) })) });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push({ transform: [convertTransform(obj as Record<string, unknown>)] });
     else
@@ -39,7 +39,7 @@ function addTransformAction(template: Template, obj: unknown) {
 
 function addWaitForAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ waitfor: { $: parseMultiQuery(obj) } });
+        template.actions.push({ waitfor: { query: parseMultiQuery(obj) } });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push(convertWaitForAction(obj as Record<string, unknown>));
     else

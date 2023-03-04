@@ -2,7 +2,7 @@ import { ErrorMessage } from "./utilities.js";
 import jsep from "jsep";
 function addClickAction(template, obj) {
     if (typeof obj === "string")
-        template.actions.push({ click: { $: parseMultiQuery(obj) } });
+        template.actions.push({ click: { query: parseMultiQuery(obj) } });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push({ click: convertClick(obj) });
     else
@@ -10,7 +10,7 @@ function addClickAction(template, obj) {
 }
 function addSelectAction(template, obj) {
     if (typeof obj === "string")
-        template.actions.push({ select: [{ $: parseMultiQuery(obj) }] });
+        template.actions.push({ select: [{ query: parseMultiQuery(obj) }] });
     else if (obj instanceof Array)
         template.actions.push({ select: obj.map(select => convertSelect(select)) });
     else if (typeof obj === "object" && obj !== null)
@@ -22,9 +22,9 @@ function addSnoozeAction(template, obj) {
 }
 function addTransformAction(template, obj) {
     if (typeof obj === "string")
-        template.actions.push({ transform: [{ $: parseSingleQuery(obj) }] });
+        template.actions.push({ transform: [{ query: parseSingleQuery(obj) }] });
     else if (obj instanceof Array)
-        template.actions.push({ transform: obj.map(obj => ({ $: parseSingleQuery(obj) })) });
+        template.actions.push({ transform: obj.map(obj => ({ query: parseSingleQuery(obj) })) });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push({ transform: [convertTransform(obj)] });
     else
@@ -32,7 +32,7 @@ function addTransformAction(template, obj) {
 }
 function addWaitForAction(template, obj) {
     if (typeof obj === "string")
-        template.actions.push({ waitfor: { $: parseMultiQuery(obj) } });
+        template.actions.push({ waitfor: { query: parseMultiQuery(obj) } });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push(convertWaitForAction(obj));
     else
