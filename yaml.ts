@@ -5,16 +5,15 @@ import jsep, { Expression, CallExpression, MemberExpression } from "jsep";
 
 function addClickAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ click: { query: parseMultiQuery(obj) } });
+        template.actions.push({ click: { query: parseMultiQuery(obj)! } });
     else if (typeof obj === "object" && obj !== null)
-        template.actions.push({ click: convertClick(obj as Record<string, unknown>) });
+        template.actions.push({ click: convertClick(obj as Record<string, unknown>)! });
     else
-    throw new ErrorMessage("Invalid click action");
+        throw new ErrorMessage("Invalid click action");
 }
 
 function addSelectAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ select: [{ query: parseMultiQuery(obj) }] });
         template.actions.push({ select: [{ query: parseMultiQuery(obj) }] });
     else if (obj instanceof Array)
         template.actions.push({ select: obj.map(select => convertSelect(select)) });
@@ -29,9 +28,9 @@ function addSnoozeAction(template: Template, obj: unknown) {
 
 function addTransformAction(template: Template, obj: unknown) {
     if (typeof obj === "string")
-        template.actions.push({ transform: [{ query: parseSingleQuery(obj) }] });
+        template.actions.push({ transform: [{ query: parseSingleQuery(obj)! }] });
     else if (obj instanceof Array)
-        template.actions.push({ transform: obj.map(obj => ({ query: parseSingleQuery(obj) })) });
+        template.actions.push({ transform: obj.map(obj => ({ query: parseSingleQuery(obj)! })) });
     else if (typeof obj === "object" && obj !== null)
         template.actions.push({ transform: [convertTransform(obj as Record<string, unknown>)] });
     else

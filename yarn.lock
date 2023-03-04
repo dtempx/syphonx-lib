@@ -559,10 +559,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.2.tgz#1469528cb3ee7b7f03a6efa942393ebea90ec12e"
-  integrity sha512-1VFm18RogIY+SVWVY+8TefYtRQKvCyf0/reEk45gqh/6iWLn2FCpXbkCFNBYGrWnhrnwmjwh+LVIv+0R+E1/ag==
+syphonx-core@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.3.tgz#4d1dbcc975e777ac7e2eee660462002fa48d3c33"
+  integrity sha512-0o9DUfC6mZbiMvmCY3LlVTFfnn6Qr5aKBGiN38kaNBvD0+EOPw1u5Cbh/e9wYQjjrB2aSBlbU6gi+L1mH5xAxQ==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
