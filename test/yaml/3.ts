@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import { parseTemplate } from "../template.js";
-import { formatTemplate } from "./common/index.js";
+import { parseTemplate } from "../../template.js";
+import { formatTemplate } from "../common/index.js";
 
 const yaml = `
 actions:
@@ -40,6 +40,6 @@ const json = `{
   ]
 }`;
 
-describe("3", () => {
+describe("yaml/3", () => {
     it("yaml to json", () => expect(formatTemplate(parseTemplate(yaml))).to.be.equal(json));
 });

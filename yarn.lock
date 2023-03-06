@@ -493,6 +493,18 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
+playwright-core@1.31.2:
+  version "1.31.2"
+  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.31.2.tgz#debf4b215d14cb619adb7e511c164d068075b2ed"
+  integrity sha512-a1dFgCNQw4vCsG7bnojZjDnPewZcw7tZUNFN0ZkcLYKj+mPmXvg4MpaaKZ5SgqPsOmqIf2YsVRkgqiRDxD+fDQ==
+
+playwright@^1.31.2:
+  version "1.31.2"
+  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.31.2.tgz#4252280586c596746122cd1fdf9f8ff6a63fa852"
+  integrity sha512-jpC47n2PKQNtzB7clmBuWh6ftBRS/Bt5EGLigJ9k2QAKcNeYXZkEaDH5gmvb6+AbcE0DO6GnXdbl9ogG6Eh+og==
+  dependencies:
+    playwright-core "1.31.2"
+
 randombytes@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -559,10 +571,12 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.3.tgz#4d1dbcc975e777ac7e2eee660462002fa48d3c33"
-  integrity sha512-0o9DUfC6mZbiMvmCY3LlVTFfnn6Qr5aKBGiN38kaNBvD0+EOPw1u5Cbh/e9wYQjjrB2aSBlbU6gi+L1mH5xAxQ==
+syphonx-core@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.4.tgz#b8f043c1f79a888a93e9cdaee97acc179c056bc9"
+  integrity sha512-JrWB6wuPi6B4KD8buZcR04ntIBUdiwts50i8kAvV2sVCxKVzC8PV4ZHhSweV81ej0EFOd6smwpRLm2u+uoU5iw==
+  dependencies:
+    playwright "^1.31.2"
 
 to-regex-range@^5.0.1:
   version "5.0.1"

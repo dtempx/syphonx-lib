@@ -5,19 +5,14 @@ export class ErrorMessage {
     }
 }
 
-export function combineUrl(url: string, path: string): string {
-    if (url && path) {
-        return `${rtrim(url, "/")}/${ltrim(path, "/")}`;
+export function combineUrl(...parts: string[]): string {
+    let url = parts.shift() || "";
+    let path = parts.shift();
+    while (path) {
+        url = `${rtrim(url, "/")}/${ltrim(path, "/")}`;
+        path = parts.shift();
     }
-    else if (url) {
-        return url;
-    }
-    else if (path) {
-        return path;
-    }
-    else {
-        return "";
-    }
+    return url;
 }
 
 export function ltrim(text: string, pattern: string): string {

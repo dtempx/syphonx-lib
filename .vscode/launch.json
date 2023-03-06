@@ -14,7 +14,7 @@
             "outFiles": ["${workspaceFolder}/**/*.js"]
         },
         {
-            "name": "Run Tests",
+            "name": "Run All Tests",
             "type": "node",
             "request": "launch",
             "skipFiles": ["<node_internals>/**"],
