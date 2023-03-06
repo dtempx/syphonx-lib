@@ -12,7 +12,7 @@ export interface Template {
     useragent?: string;
     headers?: Record<string, string>;
     viewport?: { width: number, height: number };
-    waitUntil?: syphonx.DocumentLoadState | syphonx.DocumentLoadState[] | undefined;
+    waitUntil?: syphonx.DocumentLoadState;
     timeout?: number;
 }
 
