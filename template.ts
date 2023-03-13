@@ -42,7 +42,7 @@ export async function fetchTemplateSource(file: string): Promise<string> {
 
 export function parseTemplate(text: string): Template {
     if (typeof text !== "string") {
-        throw new ErrorMessage("Failed to parse template");
+        throw new ErrorMessage("Failed to parse template, invalid argument.");
     }
 
     if (text.trim().startsWith("{") && text.trim().endsWith("}")) {
