@@ -369,6 +369,11 @@ json5@^2.2.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.1.tgz#655d50ed1e6f95ad1a3caababd2b0efda10b395c"
   integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
 
+jsonschema@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/jsonschema/-/jsonschema-1.4.1.tgz#cc4c3f0077fb4542982973d8a083b6b34f482dab"
+  integrity sha512-S6cATIPVv1z0IlxdN+zUk5EPjkGCdnhN4wVSBlvoUO1tOLJootbo9CquNJmbIh4yikWHiUedhRYrNPn1arpEmQ==
+
 locate-path@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/locate-path/-/locate-path-6.0.0.tgz#55321eb309febbc59c4801d931a72452a681d286"
@@ -493,18 +498,6 @@ picomatch@^2.0.4, picomatch@^2.2.1:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.3.1.tgz#3ba3833733646d9d3e4995946c1365a67fb07a42"
   integrity sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==
 
-playwright-core@1.31.2:
-  version "1.31.2"
-  resolved "https://registry.yarnpkg.com/playwright-core/-/playwright-core-1.31.2.tgz#debf4b215d14cb619adb7e511c164d068075b2ed"
-  integrity sha512-a1dFgCNQw4vCsG7bnojZjDnPewZcw7tZUNFN0ZkcLYKj+mPmXvg4MpaaKZ5SgqPsOmqIf2YsVRkgqiRDxD+fDQ==
-
-playwright@^1.31.2:
-  version "1.31.2"
-  resolved "https://registry.yarnpkg.com/playwright/-/playwright-1.31.2.tgz#4252280586c596746122cd1fdf9f8ff6a63fa852"
-  integrity sha512-jpC47n2PKQNtzB7clmBuWh6ftBRS/Bt5EGLigJ9k2QAKcNeYXZkEaDH5gmvb6+AbcE0DO6GnXdbl9ogG6Eh+og==
-  dependencies:
-    playwright-core "1.31.2"
-
 randombytes@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -571,12 +564,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.6:
-  version "1.2.6"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.6.tgz#e0a01545057e8aac886b26dc2c7a3641a68545c7"
-  integrity sha512-xUkThuiV8kCxpgbEy9YzMhK+3o9aEh47BYa2+0T4pFCTf1NnNFUmLW6AqwUbBqBJs5xun5OyWl1tekFVv5XsSg==
-  dependencies:
-    playwright "^1.31.2"
+syphonx-core@^1.2.9:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.9.tgz#1082c319c652299618694918c6009c0342b661b6"
+  integrity sha512-6b2Yg7BD1y60l04LhgF3owRsXZwNFdwmqKaS+5puMFFDjvNqJU2szpBHvrgXRCvFSn3DFTQYIGcZJEbQ4ALx3Q==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
