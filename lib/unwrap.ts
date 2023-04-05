@@ -1,4 +1,4 @@
-import { isObject } from "./utilities";
+import { isObject } from "./utilities.js";
 
 /**
  * Unwraps a data object by converting name/object to name/value pairs.
