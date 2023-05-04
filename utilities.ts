@@ -1,7 +1,8 @@
-export class ErrorMessage {
-    message: string;
-    constructor(message: string) {
-        this.message = message;
+export class ErrorMessage extends Error {
+    code?: string;
+    constructor(message: string, code?: string) {
+        super(message);
+        this.code = code;
     }
 }
 

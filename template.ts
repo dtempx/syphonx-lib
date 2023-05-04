@@ -19,12 +19,15 @@ export interface Template {
 const storageUrl = "https://storage.googleapis.com/syphonx/";
 
 export async function fetchTemplate(file: string): Promise<Template> {
-    if (typeof file !== "string" || !file.startsWith("$")) {
-        throw new ErrorMessage("Invalid file path specified");
-    }
+    if (typeof file !== "string" || !file.startsWith("$"))
+        throw new ErrorMessage(`Invalid file path specified: ${file}`);
+
     const number = new Date().getMinutes().toString();
     const url = combineUrl(storageUrl, file.slice(1)) + `?t=${number}`;
     const response = await fetch(url);
+    if (!response.ok)
+        throw new ErrorMessage(`Failed to fetch template: ${file}, status=${response.status}`, response.status.toString());
+
     const text = await response.text();
     const template = parseTemplate(text);
     return template;
