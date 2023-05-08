@@ -18,6 +18,9 @@ export interface Template {
 
 const storageUrl = "https://storage.googleapis.com/syphonx/";
 
+/**
+ * @deprecated Use SyphonXApi instead.
+ */
 export async function fetchTemplate(file: string): Promise<Template> {
     if (typeof file !== "string" || !file.startsWith("$"))
         throw new ErrorMessage(`Invalid file path specified: ${file}`);
@@ -33,6 +36,9 @@ export async function fetchTemplate(file: string): Promise<Template> {
     return template;
 }
 
+/**
+ * @deprecated Use SyphonXApi instead.
+ */
 export async function fetchTemplateSource(file: string): Promise<string> {
     if (typeof file !== "string" || !file.startsWith("$")) {
         throw new ErrorMessage("Invalid file path specified");
