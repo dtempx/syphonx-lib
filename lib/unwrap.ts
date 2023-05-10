@@ -16,11 +16,11 @@ export function unwrap(obj: unknown): unknown {
         const source = obj as Record<string, unknown>;
         const target = {} as Record<string, unknown>;
         for (const key of Object.keys(obj as {})) {
-            if (isObject(source[key]) && typeof (source[key] as {}).hasOwnProperty === "function" && (source[key] as {}).hasOwnProperty("value")) {
-                target[key] = unwrap((source[key] as { value: unknown }).value); // unwrap value
-            }
-            else {
-                target[key] = unwrap(source![key]);
+            if (isObject(source[key])) {
+                if ((source![key] as { value: unknown }).value !== undefined)
+                    target[key] = unwrap((source[key] as { value: unknown }).value); // unwrap value
+                else
+                    target[key] = null;
             }
         }
         return target;
