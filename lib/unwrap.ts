@@ -22,6 +22,9 @@ export function unwrap(obj: unknown): unknown {
                 else
                     target[key] = null;
             }
+            else {
+                target[key] = null;
+            }
         }
         return target;
     }
