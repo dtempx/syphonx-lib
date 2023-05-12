@@ -6,6 +6,7 @@ const defaultUrl = "https://syphonx-35w5m5egbq-uc.a.run.app";
  * Represents the accessible directories and features associated with an API key.
  */
 export interface Auth {
+    [key: string]: any;
     /** The name of the authenticated user. */
     name: string;
     /** List of accessible directories with read permissions. */

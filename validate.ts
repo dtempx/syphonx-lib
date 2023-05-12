@@ -1,6 +1,6 @@
-import { ExtractErrorCode, ExtractState } from "syphonx-core";
+import { unwrap, ExtractErrorCode, ExtractState } from "syphonx-core";
 import { Schema, Validator } from "jsonschema";
-import { snakeify, unwrap } from "./lib/index.js";
+import { snakeify } from "./lib/index.js";
 
 /**
  * Validates the extract state data using the specified data contract schema.
