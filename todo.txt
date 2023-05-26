@@ -1,0 +1,2 @@
+https://github.com/TypeStrong/typedoc
+https://github.com/tgreyuk/typedoc-plugin-markdown/tree/master/packages/typedoc-plugin-markdown#readme
