@@ -1,5 +1,6 @@
 import { expect } from "chai";
-import { parseTemplate, Template } from "../../template.js";
+import { parseTemplate } from "../../template.js";
+import { Template } from "syphonx-core";
 
 const json = `
 {

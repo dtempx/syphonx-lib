@@ -1,20 +1,8 @@
 import * as yaml from "js-yaml";
 import JSON5 from "json5";
-import * as syphonx from "syphonx-core";
+import { Template } from "syphonx-core";
 import { combineUrl, ErrorMessage } from "./utilities.js";
 import { yamlToJson } from "./yaml.js";
-
-export interface Template {
-    actions: syphonx.Action[];
-    url?: string;
-    key?: string;
-    params?: Record<string, unknown>;
-    useragent?: string;
-    headers?: Record<string, string>;
-    viewport?: { width: number, height: number };
-    waitUntil?: syphonx.DocumentLoadState;
-    timeout?: number;
-}
 
 const storageUrl = "https://storage.googleapis.com/syphonx/";
 

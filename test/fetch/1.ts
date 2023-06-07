@@ -1,5 +1,6 @@
 import { expect } from "chai";
-import { fetchTemplate, Template } from "../../template.js";
+import { fetchTemplate } from "../../template.js";
+import { Template } from "syphonx-core";
 
 describe("fetch/1", () => {
     let template: Template | undefined = undefined;

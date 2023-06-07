@@ -1,5 +1,5 @@
 import * as syphonx from "syphonx-core";
-import { Template } from "./template.js";
+import { Template } from "syphonx-core";
 import { ErrorMessage } from "./utilities.js";
 import jsep, { Expression, CallExpression, MemberExpression } from "jsep";
 
