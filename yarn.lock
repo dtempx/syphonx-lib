@@ -564,10 +564,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.28:
-  version "1.2.28"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.28.tgz#37456ea12496b0ba7bd2dbb22fc9d646e56a3b81"
-  integrity sha512-kMlAfe6+ol1zPpa282nUh3fn6tIqSxKyGrHO8yF5EbMB59LZ6kn6FHYN5uhvTvOhhws5ZBx5s1td3gzB8TRp7A==
+syphonx-core@^1.2.42:
+  version "1.2.42"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.42.tgz#83914f386b98179fd58c498c1527115757081320"
+  integrity sha512-BXycixQHjr01ZcpqfO6reotj7ykbQpFVovGA1TdF78gAU0Y/ouExzyBLabM/19xFLkqt2AvVl6Z/Gj99ugjcgw==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
