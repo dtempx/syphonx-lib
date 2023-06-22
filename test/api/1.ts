@@ -13,7 +13,7 @@ describe("SyphonXApi", () => {
             const obj = await api.template("/examples/example.json");
             expect(obj).to.be.an("object");
             expect(obj).to.have.property("template");
-            expect(obj.template).to.be.a("string");
+            expect(obj.template).to.be.an("object");
         });
     });
 });

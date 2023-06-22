@@ -26,6 +26,11 @@
   resolved "https://registry.yarnpkg.com/@types/js-yaml/-/js-yaml-4.0.5.tgz#738dd390a6ecc5442f35e7f03fa1431353f7e138"
   integrity sha512-FhpRzf927MNQdRZP0J5DLIdTXhjLYzeUTmLAu69mnVksLH9CJY3IuSeEgbKUki7GQZm0WqDkGzyxju2EZGD2wA==
 
+"@types/json-schema@^7.0.12":
+  version "7.0.12"
+  resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.12.tgz#d70faba7039d5fca54c83c7dbab41051d2b6f6cb"
+  integrity sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==
+
 "@types/mocha@^10.0.1":
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-10.0.1.tgz#2f4f65bb08bc368ac39c96da7b2f09140b26851b"
@@ -564,10 +569,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.42:
-  version "1.2.42"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.42.tgz#83914f386b98179fd58c498c1527115757081320"
-  integrity sha512-BXycixQHjr01ZcpqfO6reotj7ykbQpFVovGA1TdF78gAU0Y/ouExzyBLabM/19xFLkqt2AvVl6Z/Gj99ugjcgw==
+syphonx-core@^1.2.43:
+  version "1.2.43"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.43.tgz#e153f09b6fb52641059659e169de9232ac5f7f6d"
+  integrity sha512-vIlUXLqQhJC08Utzi5FocCsp7fYziwomExAesZWGgwWr/+YZOy/FDlEcuNeb9TKdJI2ZNoYGQwKPvRTJeCjxLA==
 
 to-regex-range@^5.0.1:
   version "5.0.1"

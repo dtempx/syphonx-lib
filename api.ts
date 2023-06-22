@@ -1,4 +1,8 @@
+import JSON5 from "json5";
 import { request } from "./lib/index.js";
+import { parseTemplate } from "./template.js";
+import { JSONSchema7 } from "json-schema";
+import { Template } from "syphonx-core";
 
 const defaultUrl = "https://syphonx-35w5m5egbq-uc.a.run.app";
 
@@ -55,9 +59,9 @@ export interface StoreFile {
  */
 export interface TemplateFileInfo {
     /** The template content. */
-    template: string;
+    template: Template;
     /** The optional contract associated with the template. */
-    contract?: string;
+    contract?: JSONSchema7;
 }
 
 /**
@@ -168,8 +172,8 @@ export class SyphonXApi {
         const { url, contract } = data;
         const template = await request.text(url);
         return {
-            template,
-            contract
+            template: parseTemplate(template),
+            contract: tryParseJSON(contract)
         };
     }
     
@@ -188,4 +192,13 @@ export class SyphonXApi {
         const { url } = await request.json(`${this.url}/template/${file}?write`) as { url: string };
         await request.putJson(url, content, { headers });
     }    
+}
+
+function tryParseJSON(text: unknown): any {
+    if (typeof text === "string") {
+        try {
+            return JSON5.parse(text);
+        }
+        catch (err) {}
+    }
 }
