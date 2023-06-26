@@ -9,11 +9,23 @@ describe("SyphonXApi", () => {
     const api = new SyphonXApi();
 
     describe("templates", () => {
-        it("can download template /examples/example.json", async () => {
-            const obj = await api.template("/examples/example.json");
+
+        it("loadTemplate('examples/example.json')", async () => {
+            const obj = await api.loadTemplate("examples/example.json");
             expect(obj).to.be.an("object");
-            expect(obj).to.have.property("template");
-            expect(obj.template).to.be.an("object");
+            expect(obj).to.have.property("template").that.is.an("object");
+            expect(obj).to.have.property("contract").that.is.an("object");
+        });
+
+        it("read('examples/example.json')", async () => {
+            const [content, metadata] = await api.read("examples/example.json");
+            expect(content).to.be.a("string").that.is.not.empty;
+            expect(metadata).to.be.an("object").that.is.not.empty;
+            expect(metadata).to.have.property("name").that.is.a("string").that.equals("examples/example.json");
+            expect(metadata).to.have.property("hash").that.is.a("string").that.matches(/.{22}==/);
+            expect(metadata).to.have.property("createdAt").that.is.a("date");
+            expect(metadata).to.have.property("modifiedAt").that.is.a("date");
+            expect(metadata).to.have.property("contract").that.is.a("string").that.equals("examples/contracts/example.json");
         });
     });
 });

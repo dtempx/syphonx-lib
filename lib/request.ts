@@ -43,6 +43,13 @@ export async function text(url: string, { method = "GET", headers = {}, obj }: R
     return result;
 }
 
+export { _delete as delete };
+async function _delete(url: string, { headers = {} }: BasicOptions): Promise<void> {
+    const response = await fetch(url, { method: "DELETE", headers });
+    if (!response.ok)
+        throw new Error(`DELETE ${url} failed with status=${response.status} ${response.statusText}`);
+}
+
 function formatBody(obj: unknown): string | undefined {
     if (typeof obj === "object")
         return JSON.stringify(obj);

@@ -1,8 +1,12 @@
 import JSON5 from "json5";
 import { request } from "./lib/index.js";
 import { parseTemplate } from "./template.js";
-import { JSONSchema7 } from "json-schema";
-import { Template } from "syphonx-core";
+import { Schema } from "jsonschema";
+import { Template, unwrap } from "syphonx-core";
+import { ErrorMessage } from "./utilities.js";
+import { validate } from "./validate.js";
+import * as cheerio from "cheerio";
+import * as syphonx from "syphonx-core";
 
 const defaultUrl = "https://syphonx-35w5m5egbq-uc.a.run.app";
 
@@ -23,6 +27,19 @@ export interface Auth {
     features: string[];
 }
 
+export interface FileMetadata {
+    /** The storage name of the contract. */
+    name: string;
+    /** An MD5 hash of the contract file contents. Used to determine whether the contract has changed since last read. */
+    hash: string;
+    /** The storage name of the contract associated with a template. */
+    contract?: string;
+    /** Date contract was created. */
+    createdAt: Date;
+    /** Date contract was last modified. */
+    modifiedAt: Date;
+}
+
 /**
  * Identifies the type of informaation to be logged.
  */
@@ -34,6 +51,12 @@ export type LogDataType = "error";
 export interface LogData extends Record<string, unknown> {
     /** The key for the log data type. */
     key: LogDataType;
+}
+
+export interface RunOptions extends Omit<syphonx.HostOptions, "template"> {
+    template: Template | string;
+    contract?: Schema;
+    html?: string;
 }
 
 /**
@@ -55,13 +78,13 @@ export interface StoreFile {
 }
 
 /**
- * Represents the template file information.
+ * Represents storage infomration associated with a template.
  */
-export interface TemplateFileInfo {
+export interface LoadTemplateResult {
     /** The template content. */
     template: Template;
     /** The optional contract associated with the template. */
-    contract?: JSONSchema7;
+    contract?: Schema;
 }
 
 /**
@@ -111,6 +134,19 @@ export class SyphonXApi {
         const result = await request.json(`${this.url}/autoselect`, { headers }) as { selector: string };
         return result.selector;
     }
+
+    /**
+     * Deletes a file from the cloud.
+     * 
+     * @param name - The storage path of the file to delete.
+     */
+    async delete(name: string): Promise<void> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
+        const headers = this.headers;
+        const { url } = await request.json(`${this.url}/template/${name}?delete`) as { url: string };
+        await request.delete(url, { headers });
+    }
     
     /**
      * Retrieves the list of accessible files and folders in the store.
@@ -122,6 +158,23 @@ export class SyphonXApi {
         const files = await request.json(`${this.url}/templates`, { headers }) as StoreFile[];
         files.forEach(file => file.timestamp = new Date(file.timestamp));
         return files;    
+    }
+
+    /**
+     * Retrieves a template and its associated contract from the cloud.
+     *
+     * @param name - The storage path of the template to retrieve.
+     * @returns A Promise resolving to a TemplateFileInfo object.
+     */
+    async loadTemplate(name: string): Promise<LoadTemplateResult> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
+        const headers = this.headers;
+        const data = await request.json(`${this.url}/template/${name}`, { headers });
+        return {
+            template: parseTemplate(data.json),
+            contract: tryParseJSON(data.contract)
+        };
     }
 
     /**
@@ -142,55 +195,88 @@ export class SyphonXApi {
     }
     
     /**
-     * Reads the content of a file from the store.
+     * Reads the content of a file from cloud storage.
      *
-     * @param file - The file path to read from.
-     * @returns A Promise resolving to the file content as a string.
-     */    
-    async read(file: string): Promise<string> {
-        if (file.startsWith("/"))
-            file = file.slice(1);
-    
-        const headers = this.headers;
-        const { url } = await request.json(`${this.url}/template/${file}?read`) as { url: string };
-        const content = await request.text(url, { headers });
-        return content;
-    }
-    
-    /**
-     * Retrieves the template file information.
-     *
-     * @param file - The file path to retrieve the template information from.
-     * @returns A Promise resolving to a TemplateFileInfo object.
+     * @param name - The storage path of the file to read.
+     * @returns A Promise resolving to a tuple with the file content and metadata.
      */
-    async template(file: string): Promise<TemplateFileInfo> {
-        if (file.startsWith("/"))
-            file = file.slice(1);
-
+    async read(name: string): Promise<[string, FileMetadata]> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
         const headers = this.headers;
-        const data = await request.json(`${this.url}/template/${file}`, { headers }) as any;
+        const obj = await request.json(`${this.url}/template/${name}?read`, { headers });
+        const content = await request.text(obj.url, { headers });
+        const metadata = {
+            name: obj.name,
+            hash: obj.hash,
+            contract: obj.contractName,
+            createdAt: new Date(obj.createdAt),
+            modifiedAt: new Date(obj.modifiedAt)
+        };
+        return [content, metadata];
+    }
+
+    /**
+     * Runs in a browser or offline environment extracting data using the specified template. Optionally validates the extracted data against the specified contract.
+     * @param options - The options for the extraction. 
+     * @returns The extraction result.
+     */
+    async run({ template, contract, html, ...options }: RunOptions): Promise<syphonx.ExtractResult> {
+        if (typeof template === "string") {
+            const obj = await this.loadTemplate(template);
+            template = obj.template;
+            contract = obj.contract;
+        }
+    
+        if (!html) {
+            const result = await syphonx.host({ template, ...options });
+            if (contract)
+                validate(result as unknown as syphonx.ExtractState, contract);
+            return result;
+        }
+        else {
+            const root = cheerio.load(html);
+            const state = await syphonx.extract({ ...template, root } as syphonx.ExtractState);
+            if (contract)
+                validate(state, contract);
+            return {
+                ok: true,
+                ...state,
+                data: options.unwrap ? unwrap(state) : state,
+                online: false
+            };
+        }
+    }
+
+    /**
+     * @deprecated Use `loadTemplate` instead.
+     */
+    async template(name: string): Promise<{ template: string, contract?: string }> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
+        const headers = this.headers;
+        const data = await request.json(`${this.url}/template/${name}`, { headers }) as any;
         const { url, contract } = data;
         const template = await request.text(url);
-        return {
-            template: parseTemplate(template),
-            contract: tryParseJSON(contract)
-        };
+        return { template, contract };
     }
-    
+
     /**
      * Writes content to a file in the store.
      *
-     * @param file - The file path to write to.
+     * @param name - The storage path of the file to write.
      * @param content - The content to write to the file.
+     * @param hash - The hash of the existing file content. Must match to overwrite existing file or an error will result. Leave unspecified for new file creation.
      * @returns A Promise resolving when the write operation is complete.
-     */    
-    async write(file: string, content: string): Promise<void> {
-        if (file.startsWith("/"))
-            file = file.slice(1);
-
+     */
+    async write(name: string, content: string, hash?: string): Promise<void> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
         const headers = this.headers;
-        const { url } = await request.json(`${this.url}/template/${file}?write`) as { url: string };
-        await request.putJson(url, content, { headers });
+        const file = await request.json(`${this.url}/template/${name}?write`);
+        if (hash && hash !== file.hash)
+            throw new ErrorMessage(`File ${name} has been modified since last save`);
+        await request.putJson(file.url, content, { headers });
     }    
 }
 
