@@ -242,7 +242,7 @@ export class SyphonXApi {
             return {
                 ok: true,
                 ...state,
-                data: options.unwrap ? unwrap(state) : state,
+                data: options.unwrap ? unwrap(state.data) : state.data,
                 online: false
             };
         }

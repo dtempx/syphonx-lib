@@ -682,10 +682,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.45:
-  version "1.2.45"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.45.tgz#f3bda9e774ee84e04cdede730e3e17814432c69f"
-  integrity sha512-5aJ95k4Ox5oJ0vcl1rLpdYT9j5pVH4P5k18mRTUVswqbQGe8YlfDj5IxgyiSG+HS9q+I616ORj/msU6teSqE6A==
+syphonx-core@^1.2.48:
+  version "1.2.48"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.48.tgz#17fee0861008270502617be64e2ce77c7e52c6bc"
+  integrity sha512-IO0W7GWesszDPuGFRnCGGrnAkNByRqqK+Q4qbfNNeyuTby953k78SNB3ozgcfysCUeASbulhCn5XJSZ6q15KzA==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
