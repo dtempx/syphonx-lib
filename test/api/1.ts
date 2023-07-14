@@ -17,6 +17,14 @@ describe("SyphonXApi", () => {
             expect(obj).to.have.property("contract").that.is.an("object");
         });
 
+        it("loadTemplate('examples/example.json') (cached)", async () => {
+            const obj = await api.loadTemplate("examples/example.json");
+            expect(obj).to.be.an("object");
+            expect(obj).to.have.property("template").that.is.an("object");
+            expect(obj).to.have.property("contract").that.is.an("object");
+        });
+
+
         it("read('examples/example.json')", async () => {
             const [content, metadata] = await api.read("examples/example.json");
             expect(content).to.be.a("string").that.is.not.empty;

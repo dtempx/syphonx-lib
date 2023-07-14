@@ -1,5 +1,5 @@
 import JSON5 from "json5";
-import { request } from "./lib/index.js";
+import { request, MemCache } from "./lib/index.js";
 import { parseTemplate } from "./template.js";
 import { Schema } from "jsonschema";
 import { Template, unwrap } from "syphonx-core";
@@ -9,6 +9,8 @@ import * as cheerio from "cheerio";
 import * as syphonx from "syphonx-core";
 
 const defaultUrl = "https://syphonx-35w5m5egbq-uc.a.run.app";
+const templateCacheTTL = 5 * 60 * 1000; // 5 minutes
+const memcache = new MemCache();
 
 /**
  * Represents the accessible directories and features associated with an API key.
@@ -169,12 +171,20 @@ export class SyphonXApi {
     async loadTemplate(name: string): Promise<LoadTemplateResult> {
         if (name.startsWith("/"))
             name = name.slice(1);
+
+        const cachedResult = memcache.read(name) as LoadTemplateResult;
+        if (cachedResult)
+            return cachedResult;
+
         const headers = this.headers;
         const data = await request.json(`${this.url}/template/${name}`, { headers });
-        return {
+
+        const result = {
             template: parseTemplate(data.json),
             contract: tryParseJSON(data.contract)
         };
+        memcache.write(name, result, templateCacheTTL);
+        return result;
     }
 
     /**
