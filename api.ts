@@ -8,7 +8,7 @@ import { validate } from "./validate.js";
 import * as cheerio from "cheerio";
 import * as syphonx from "syphonx-core";
 
-const defaultUrl = "https://syphonx-35w5m5egbq-uc.a.run.app";
+const defaultUrl = "https://api.syphonx.io";
 const templateCacheTTL = 5 * 60 * 1000; // 5 minutes
 const memcache = new MemCache();
 
