@@ -87,6 +87,8 @@ export interface LoadTemplateResult {
     template: Template;
     /** The optional contract associated with the template. */
     contract?: Schema;
+    /** Information on the stored file. */
+    metadata: FileMetadata;
 }
 
 /**
@@ -181,7 +183,14 @@ export class SyphonXApi {
 
         const result = {
             template: parseTemplate(data.json),
-            contract: tryParseJSON(data.contract)
+            contract: tryParseJSON(data.contract),
+            metadata: {
+                name: data.name,
+                contract: data.contractName,
+                hash: data.hash,
+                createdAt: new Date(data.createdAt),
+                modifiedAt: new Date(data.modifiedAt)        
+            }
         };
         memcache.write(name, result, templateCacheTTL);
         return result;
