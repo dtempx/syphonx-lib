@@ -25,6 +25,7 @@
 - [onReload](RunOptions.md#onreload)
 - [onScreenshot](RunOptions.md#onscreenshot)
 - [onYield](RunOptions.md#onyield)
+- [outside](RunOptions.md#outside)
 - [params](RunOptions.md#params)
 - [retries](RunOptions.md#retries)
 - [retryDelay](RunOptions.md#retrydelay)
@@ -38,9 +39,11 @@
 
 • `Optional` **contract**: `Schema`
 
+A contract document to validate extracted data.
+
 #### Defined in
 
-[api.ts:60](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L60)
+[api.ts:63](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L63)
 
 ___
 
@@ -76,9 +79,11 @@ ___
 
 • `Optional` **html**: `string`
 
+HTML content for extracting data offline.
+
 #### Defined in
 
-[api.ts:61](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L61)
+[api.ts:65](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L65)
 
 ___
 
@@ -319,6 +324,18 @@ node_modules/syphonx-core/dist/cjs/host.d.ts:32
 
 ___
 
+### outside
+
+• `Optional` **outside**: `boolean`
+
+In an online case, forces the data extraction to be performed outside of the browser by extracting the HTML and processing the template offline.
+
+#### Defined in
+
+[api.ts:67](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L67)
+
+___
+
 ### params
 
 • `Optional` **params**: `Record`<`string`, `unknown`\>
@@ -365,9 +382,11 @@ ___
 
 • **template**: `string` \| [`Template`](Template.md)
 
+Cloud path to template or a template document.
+
 #### Defined in
 
-[api.ts:59](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L59)
+[api.ts:61](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L61)
 
 ___
 

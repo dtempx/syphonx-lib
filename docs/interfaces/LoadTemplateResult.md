@@ -22,7 +22,7 @@ The optional contract associated with the template.
 
 #### Defined in
 
-[api.ts:89](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L89)
+[api.ts:95](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L95)
 
 ___
 
@@ -34,7 +34,7 @@ Information on the stored file.
 
 #### Defined in
 
-[api.ts:91](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L91)
+[api.ts:97](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L97)
 
 ___
 
@@ -46,4 +46,4 @@ The template content.
 
 #### Defined in
 
-[api.ts:87](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L87)
+[api.ts:93](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L93)

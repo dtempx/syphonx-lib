@@ -13,6 +13,7 @@
 ### Properties
 
 - [html](ExtractResult.md#html)
+- [metrics](ExtractResult.md#metrics)
 - [ok](ExtractResult.md#ok)
 - [status](ExtractResult.md#status)
 - [version](ExtractResult.md#version)
@@ -25,7 +26,17 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:4
+node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:5
+
+___
+
+### metrics
+
+• **metrics**: [`Metrics`](Metrics.md)
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:8
 
 ___
 
@@ -35,7 +46,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:3
+node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:4
 
 ___
 
@@ -45,7 +56,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:5
+node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:6
 
 ___
 
@@ -55,4 +66,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:6
+node_modules/syphonx-core/dist/cjs/extract/public/ExtractResult.d.ts:7

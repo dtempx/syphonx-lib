@@ -1,10 +1,11 @@
 import JSON5 from "json5";
-import { request, MemCache } from "./lib/index.js";
+import { isFormula, merge, request, MemCache, Timer } from "./lib/index.js";
 import { parseTemplate } from "./template.js";
 import { Schema } from "jsonschema";
-import { Template, unwrap } from "syphonx-core";
+import { unwrap, Metrics, Template } from "syphonx-core";
 import { ErrorMessage } from "./utilities.js";
 import { validate } from "./validate.js";
+import { evaluateFormula } from "syphonx-core";
 import * as cheerio from "cheerio";
 import * as syphonx from "syphonx-core";
 
@@ -56,9 +57,14 @@ export interface LogData extends Record<string, unknown> {
 }
 
 export interface RunOptions extends Omit<syphonx.HostOptions, "template"> {
+    /** Cloud path to template or a template document. */
     template: Template | string;
+    /** A contract document to validate extracted data. */
     contract?: Schema;
+    /** HTML content for extracting data offline. */
     html?: string;
+    /** In an online case, forces the data extraction to be performed outside of the browser by extracting the HTML and processing the template offline. */
+    outside?: boolean;
 }
 
 /**
@@ -240,28 +246,92 @@ export class SyphonXApi {
      * @param options - The options for the extraction. 
      * @returns The extraction result.
      */
-    async run({ template, contract, html, ...options }: RunOptions): Promise<syphonx.ExtractResult> {
+    async run({ template, contract, html, outside, ...options }: RunOptions): Promise<syphonx.ExtractResult> {
         if (typeof template === "string") {
             const obj = await this.loadTemplate(template);
             template = obj.template;
             contract = obj.contract;
         }
+
+        const timer = new Timer();
+        if (outside) {
+            if (!options.onNavigate)
+                throw new Error("onNavigate not defined");
+    
+            if (!options.onHtml)
+                throw new Error("onHtml not defined");
+    
+            let url = options.url || template.url;
+            if (!url || typeof url !== "string")
+                throw new Error("url not specified");
+    
+            const params = merge(template.params, options.params); // options.params overrides template.params
+            const timeout = typeof template.timeout === "number" ? template.timeout * 1000 : undefined;
+            const waitUntil = template.waitUntil;
+
+            if (isFormula(url))
+                url = encodeURI(evaluateFormula(url.slice(1, -1), { params }) as string);
+
+            const navigationResult = await options.onNavigate({ url, timeout, waitUntil });
+            const html = await options.onHtml();
+            const root = cheerio.load(html);
+            let state = {
+                ...template,
+                url,
+                params,
+                vars: {},
+                debug: options.debug || template.debug,
+                root
+            } as syphonx.ExtractState;
+            state.vars.__status = navigationResult?.status;
+            state = await syphonx.extract(state);
+
+            if (contract)
+                validate(state, contract);
+
+            const metrics = state.vars.__metrics as Metrics;
+            metrics.elapsed = timer.elapsed();
+            metrics.errors = state.errors?.length ?? 0;
+
+            return {
+                ok: true,
+                status: navigationResult?.status,
+                html,
+                ...state,
+                data: options.unwrap ? unwrap(state.data) : state.data,
+                metrics,
+                online: false
+            };
+        }
     
         if (!html) {
             const result = await syphonx.host({ template, ...options });
+
             if (contract)
                 validate(result as unknown as syphonx.ExtractState, contract);
+
+            result.metrics = result.vars.__metrics as Metrics;
+            result.metrics.elapsed = timer.elapsed();
+            result.metrics.errors = result.errors?.length ?? 0;
+
             return result;
         }
         else {
             const root = cheerio.load(html);
             const state = await syphonx.extract({ ...template, root } as syphonx.ExtractState);
+
             if (contract)
                 validate(state, contract);
+
+            const metrics = state.vars.__metrics as Metrics;
+            metrics.elapsed = timer.elapsed();
+            metrics.errors = state.errors?.length ?? 0;
+    
             return {
                 ok: true,
                 ...state,
                 data: options.unwrap ? unwrap(state.data) : state.data,
+                metrics,
                 online: false
             };
         }

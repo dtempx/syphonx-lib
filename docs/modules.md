@@ -26,6 +26,7 @@
 - [LoadTemplateResult](interfaces/LoadTemplateResult.md)
 - [Locator](interfaces/Locator.md)
 - [LogData](interfaces/LogData.md)
+- [Metrics](interfaces/Metrics.md)
 - [Navigate](interfaces/Navigate.md)
 - [NavigateResult](interfaces/NavigateResult.md)
 - [Reload](interfaces/Reload.md)
@@ -36,6 +37,7 @@
 - [Select](interfaces/Select.md)
 - [SelectOptions](interfaces/SelectOptions.md)
 - [SelectTarget](interfaces/SelectTarget.md)
+- [Snooze](interfaces/Snooze.md)
 - [StoreFile](interfaces/StoreFile.md)
 - [Switch](interfaces/Switch.md)
 - [Template](interfaces/Template.md)
@@ -76,7 +78,6 @@
 - [SelectQueryOperand](modules.md#selectqueryoperand)
 - [SelectQueryOperator](modules.md#selectqueryoperator)
 - [SelectType](modules.md#selecttype)
-- [Snooze](modules.md#snooze)
 - [SnoozeAction](modules.md#snoozeaction)
 - [SnoozeInterval](modules.md#snoozeinterval)
 - [SnoozeMode](modules.md#snoozemode)
@@ -99,6 +100,7 @@
 - [extractSync](modules.md#extractsync)
 - [fetchTemplate](modules.md#fetchtemplate)
 - [fetchTemplateSource](modules.md#fetchtemplatesource)
+- [flatten](modules.md#flatten)
 - [host](modules.md#host)
 - [invokeAsyncMethod](modules.md#invokeasyncmethod)
 - [parseJQuery](modules.md#parsejquery)
@@ -197,7 +199,7 @@ ___
 
 ### ExtractErrorCode
 
-Ƭ **ExtractErrorCode**: ``"app-error"`` \| ``"click-timeout"`` \| ``"click-required"`` \| ``"error-limit"`` \| ``"eval-error"`` \| ``"external-error"`` \| ``"fatal-error"`` \| ``"invalid-select"`` \| ``"invalid-operator"`` \| ``"invalid-operand"`` \| ``"select-required"`` \| ``"waitfor-timeout"``
+Ƭ **ExtractErrorCode**: ``"app-error"`` \| ``"click-timeout"`` \| ``"click-required"`` \| ``"error-limit"`` \| ``"eval-error"`` \| ``"external-error"`` \| ``"fatal-error"`` \| ``"host-error"`` \| ``"invalid-select"`` \| ``"invalid-operator"`` \| ``"invalid-operand"`` \| ``"select-required"`` \| ``"waitfor-timeout"``
 
 #### Defined in
 
@@ -255,7 +257,7 @@ Identifies the type of informaation to be logged.
 
 #### Defined in
 
-[api.ts:48](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/api.ts#L48)
+[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L49)
 
 ___
 
@@ -435,16 +437,6 @@ node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:26
 
 ___
 
-### Snooze
-
-Ƭ **Snooze**: [`number`, `number`]
-
-#### Defined in
-
-node_modules/syphonx-core/dist/cjs/extract/public/Snooze.d.ts:1
-
-___
-
 ### SnoozeAction
 
 Ƭ **SnoozeAction**: `Object`
@@ -453,7 +445,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `snooze` | [`Snooze`](modules.md#snooze) |
+| `snooze` | [`Snooze`](interfaces/Snooze.md) \| `number` \| [`number`] \| [`number`, `number`] |
 
 #### Defined in
 
@@ -688,7 +680,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/template.ts#L12)
+[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/322fff5/template.ts#L12)
 
 ___
 
@@ -712,7 +704,30 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/template.ts#L30)
+[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/322fff5/template.ts#L30)
+
+___
+
+### flatten
+
+▸ **flatten**(`actions`, `result?`, `level?`, `n?`): `FlatAction`[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actions` | [`Action`](modules.md#action)[] |
+| `result?` | `FlatAction`[] |
+| `level?` | `number` |
+| `n?` | `number` |
+
+#### Returns
+
+`FlatAction`[]
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/lib/flatten.d.ts:7
 
 ___
 
@@ -774,7 +789,7 @@ ___
 
 #### Defined in
 
-[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/yaml.ts#L170)
+[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/322fff5/yaml.ts#L170)
 
 ___
 
@@ -794,7 +809,7 @@ ___
 
 #### Defined in
 
-[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/template.ts#L40)
+[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/322fff5/template.ts#L40)
 
 ___
 
@@ -818,7 +833,7 @@ A string containing the rendered jQuery expression result.
 
 #### Defined in
 
-[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/render.ts#L8)
+[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/322fff5/render.ts#L8)
 
 ___
 
@@ -844,7 +859,7 @@ The extraction result.
 
 #### Defined in
 
-select.ts:20
+[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L20)
 
 ___
 
@@ -870,7 +885,7 @@ The transform result.
 
 #### Defined in
 
-transform.ts:17
+[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/322fff5/transform.ts#L17)
 
 ___
 
@@ -919,4 +934,4 @@ Modifies the input extract state in place and also returns it.
 
 #### Defined in
 
-[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/ca85ca5/validate.ts#L13)
+[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/322fff5/validate.ts#L13)
