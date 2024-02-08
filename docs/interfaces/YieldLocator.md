@@ -20,7 +20,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:24
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:24
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:22
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:22
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:20
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:20
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:23
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:23
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:21
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:21

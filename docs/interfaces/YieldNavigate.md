@@ -16,4 +16,4 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:27
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:27

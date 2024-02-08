@@ -22,7 +22,7 @@ The storage name of the contract associated with a template.
 
 #### Defined in
 
-[api.ts:39](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L39)
+[api.ts:39](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L39)
 
 ___
 
@@ -34,7 +34,7 @@ Date contract was created.
 
 #### Defined in
 
-[api.ts:41](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L41)
+[api.ts:41](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L41)
 
 ___
 
@@ -46,7 +46,7 @@ An MD5 hash of the contract file contents. Used to determine whether the contrac
 
 #### Defined in
 
-[api.ts:37](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L37)
+[api.ts:37](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L37)
 
 ___
 
@@ -58,7 +58,7 @@ Date contract was last modified.
 
 #### Defined in
 
-[api.ts:43](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L43)
+[api.ts:43](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L43)
 
 ___
 
@@ -70,4 +70,4 @@ The storage name of the contract.
 
 #### Defined in
 
-[api.ts:35](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L35)
+[api.ts:35](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L35)
