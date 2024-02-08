@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[select.ts:10](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L10)
+[select.ts:10](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L10)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[select.ts:9](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L9)
+[select.ts:9](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L9)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[select.ts:6](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L6)
+[select.ts:6](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L6)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[select.ts:11](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L11)
+[select.ts:11](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L11)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[select.ts:12](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L12)
+[select.ts:12](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L12)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[select.ts:7](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L7)
+[select.ts:7](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L7)
 
 ___
 
@@ -82,4 +82,4 @@ ___
 
 #### Defined in
 
-[select.ts:8](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L8)
+[select.ts:8](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L8)

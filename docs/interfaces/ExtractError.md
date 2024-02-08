@@ -20,7 +20,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractError.d.ts:3
+node_modules/syphonx-core/dist/cjs/package/public/ExtractError.d.ts:3
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractError.d.ts:6
+node_modules/syphonx-core/dist/cjs/package/public/ExtractError.d.ts:6
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractError.d.ts:5
+node_modules/syphonx-core/dist/cjs/package/public/ExtractError.d.ts:5
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractError.d.ts:4
+node_modules/syphonx-core/dist/cjs/package/public/ExtractError.d.ts:4
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractError.d.ts:7
+node_modules/syphonx-core/dist/cjs/package/public/ExtractError.d.ts:7

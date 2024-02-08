@@ -23,7 +23,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:4
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:4
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:7
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:7
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:9
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:9
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:5
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:5
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:10
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:10
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:6
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:6
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:8
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:8
 
 ___
 
@@ -93,4 +93,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/WaitFor.d.ts:11
+node_modules/syphonx-core/dist/cjs/package/public/WaitFor.d.ts:11

@@ -23,7 +23,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:6
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:6
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:8
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:8
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:7
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:7
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:5
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:5
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:11
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:11
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:10
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:10
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:9
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:9
 
 ___
 
@@ -93,4 +93,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Error.d.ts:12
+node_modules/syphonx-core/dist/cjs/package/public/Error.d.ts:12

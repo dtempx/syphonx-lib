@@ -21,6 +21,7 @@
 - [ExtractState](interfaces/ExtractState.md)
 - [ExtractStatus](interfaces/ExtractStatus.md)
 - [FileMetadata](interfaces/FileMetadata.md)
+- [FlatAction](interfaces/FlatAction.md)
 - [GoBack](interfaces/GoBack.md)
 - [HostOptions](interfaces/HostOptions.md)
 - [LoadTemplateResult](interfaces/LoadTemplateResult.md)
@@ -54,6 +55,7 @@
 ### Type Aliases
 
 - [Action](modules.md#action)
+- [ActionType](modules.md#actiontype)
 - [BreakAction](modules.md#breakaction)
 - [ClickAction](modules.md#clickaction)
 - [DocumentLoadState](modules.md#documentloadstate)
@@ -100,7 +102,12 @@
 - [extractSync](modules.md#extractsync)
 - [fetchTemplate](modules.md#fetchtemplate)
 - [fetchTemplateSource](modules.md#fetchtemplatesource)
-- [flatten](modules.md#flatten)
+- [findAction](modules.md#findaction)
+- [findLastSelectGroup](modules.md#findlastselectgroup)
+- [findSelect](modules.md#findselect)
+- [flattenTemplateActions](modules.md#flattentemplateactions)
+- [flattenTemplateSelect](modules.md#flattentemplateselect)
+- [flattenTemplateTransforms](modules.md#flattentemplatetransforms)
 - [host](modules.md#host)
 - [invokeAsyncMethod](modules.md#invokeasyncmethod)
 - [parseJQuery](modules.md#parsejquery)
@@ -119,7 +126,17 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:18
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:18
+
+___
+
+### ActionType
+
+Ƭ **ActionType**: ``"break"`` \| ``"click"`` \| ``"each"`` \| ``"error"`` \| ``"goback"`` \| ``"locator"`` \| ``"navigate"`` \| ``"reload"`` \| ``"repeat"`` \| ``"screenshot"`` \| ``"scroll"`` \| ``"select"`` \| ``"snooze"`` \| ``"switch"`` \| ``"transform"`` \| ``"waitfor"`` \| ``"yield"``
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:70
 
 ___
 
@@ -135,7 +152,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:19
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:19
 
 ___
 
@@ -151,7 +168,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:22
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:22
 
 ___
 
@@ -161,7 +178,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/DocumentLoadState.d.ts:1
+node_modules/syphonx-core/dist/cjs/package/public/DocumentLoadState.d.ts:1
 
 ___
 
@@ -177,7 +194,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:25
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:25
 
 ___
 
@@ -193,7 +210,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:28
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:28
 
 ___
 
@@ -203,7 +220,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/ExtractErrorCode.d.ts:1
+node_modules/syphonx-core/dist/cjs/package/public/ExtractErrorCode.d.ts:1
 
 ___
 
@@ -219,7 +236,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:31
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:31
 
 ___
 
@@ -235,7 +252,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:34
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:34
 
 ___
 
@@ -245,7 +262,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Locator.d.ts:12
+node_modules/syphonx-core/dist/cjs/package/public/Locator.d.ts:12
 
 ___
 
@@ -257,7 +274,7 @@ Identifies the type of informaation to be logged.
 
 #### Defined in
 
-[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L49)
+[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L49)
 
 ___
 
@@ -273,7 +290,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:37
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:37
 
 ___
 
@@ -289,7 +306,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:40
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:40
 
 ___
 
@@ -305,7 +322,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:43
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:43
 
 ___
 
@@ -321,7 +338,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:46
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:46
 
 ___
 
@@ -337,7 +354,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:49
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:49
 
 ___
 
@@ -347,7 +364,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Scroll.d.ts:12
+node_modules/syphonx-core/dist/cjs/package/public/Scroll.d.ts:12
 
 ___
 
@@ -363,7 +380,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:52
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:52
 
 ___
 
@@ -373,7 +390,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:31
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:31
 
 ___
 
@@ -383,7 +400,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:32
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:32
 
 ___
 
@@ -393,7 +410,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:27
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:27
 
 ___
 
@@ -403,7 +420,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:28
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:28
 
 ___
 
@@ -413,7 +430,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:30
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:30
 
 ___
 
@@ -423,7 +440,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:29
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:29
 
 ___
 
@@ -433,7 +450,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:26
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:26
 
 ___
 
@@ -449,7 +466,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:55
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:55
 
 ___
 
@@ -459,7 +476,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Snooze.d.ts:3
+node_modules/syphonx-core/dist/cjs/package/public/Snooze.d.ts:3
 
 ___
 
@@ -469,7 +486,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Snooze.d.ts:2
+node_modules/syphonx-core/dist/cjs/package/public/Snooze.d.ts:2
 
 ___
 
@@ -485,7 +502,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:58
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:58
 
 ___
 
@@ -501,7 +518,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:61
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:61
 
 ___
 
@@ -517,7 +534,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:64
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:64
 
 ___
 
@@ -527,7 +544,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/When.d.ts:1
+node_modules/syphonx-core/dist/cjs/package/public/When.d.ts:1
 
 ___
 
@@ -543,7 +560,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Action.d.ts:67
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:67
 
 ## Variables
 
@@ -565,7 +582,7 @@ node_modules/syphonx-core/dist/cjs/host.d.ts:39
 
 | Name | Type |
 | :------ | :------ |
-| `selects` | [`Select`](interfaces/Select.md)[] |
+| `selects` | [`Select`](interfaces/Select.md)[] \| [`Template`](interfaces/Template.md) |
 | `options?` | `SelectOptions` |
 
 #### Returns
@@ -574,7 +591,7 @@ node_modules/syphonx-core/dist/cjs/host.d.ts:39
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/select.d.ts:9
+node_modules/syphonx-core/dist/cjs/package/select.d.ts:11
 
 ___
 
@@ -586,7 +603,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `transforms` | [`Transform`](interfaces/Transform.md)[] |
+| `transforms` | [`Transform`](interfaces/Transform.md)[] \| [`Template`](interfaces/Template.md) |
 | `options?` | `TransformOptions` |
 
 #### Returns
@@ -595,7 +612,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/transform.d.ts:8
+node_modules/syphonx-core/dist/cjs/package/transform.d.ts:9
 
 ___
 
@@ -616,7 +633,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/lib/formula.d.ts:1
+node_modules/syphonx-core/dist/cjs/package/lib/formula.d.ts:1
 
 ___
 
@@ -628,7 +645,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `state` | [`ExtractState`](interfaces/ExtractState.md) |
+| `state` | [`ExtractState`](interfaces/ExtractState.md) & { `unwrap?`: `boolean`  } |
 
 #### Returns
 
@@ -636,7 +653,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/extract.d.ts:2
+node_modules/syphonx-core/dist/cjs/package/extract.d.ts:2
 
 ___
 
@@ -648,7 +665,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `state` | `Partial`<[`ExtractState`](interfaces/ExtractState.md)\> |
+| `state` | `Partial`<[`ExtractState`](interfaces/ExtractState.md)\> & { `unwrap?`: `boolean`  } |
 
 #### Returns
 
@@ -656,7 +673,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/extract-sync.d.ts:2
+node_modules/syphonx-core/dist/cjs/package/extract-sync.d.ts:2
 
 ___
 
@@ -680,7 +697,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/322fff5/template.ts#L12)
+[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/template.ts#L12)
 
 ___
 
@@ -704,30 +721,133 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/322fff5/template.ts#L30)
+[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/template.ts#L30)
 
 ___
 
-### flatten
+### findAction
 
-▸ **flatten**(`actions`, `result?`, `level?`, `n?`): `FlatAction`[]
+▸ **findAction**(`actions`, `action_type`): [`Action`](modules.md#action)[]
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `actions` | [`Action`](modules.md#action)[] |
-| `result?` | `FlatAction`[] |
+| `action_type` | [`ActionType`](modules.md#actiontype) |
+
+#### Returns
+
+[`Action`](modules.md#action)[]
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/utilities.d.ts:7
+
+___
+
+### findLastSelectGroup
+
+▸ **findLastSelectGroup**(`actions`): [`Select`](interfaces/Select.md)[] \| `undefined`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actions` | [`Action`](modules.md#action)[] |
+
+#### Returns
+
+[`Select`](interfaces/Select.md)[] \| `undefined`
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/utilities.d.ts:8
+
+___
+
+### findSelect
+
+▸ **findSelect**(`actions`, `name`): [`Select`](interfaces/Select.md)[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actions` | [`Action`](modules.md#action)[] |
+| `name` | `string` |
+
+#### Returns
+
+[`Select`](interfaces/Select.md)[]
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/utilities.d.ts:9
+
+___
+
+### flattenTemplateActions
+
+▸ **flattenTemplateActions**(`actions`, `result?`, `level?`, `n?`): [`FlatAction`](interfaces/FlatAction.md)[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actions` | [`Action`](modules.md#action)[] |
+| `result?` | [`FlatAction`](interfaces/FlatAction.md)[] |
 | `level?` | `number` |
 | `n?` | `number` |
 
 #### Returns
 
-`FlatAction`[]
+[`FlatAction`](interfaces/FlatAction.md)[]
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/lib/flatten.d.ts:7
+node_modules/syphonx-core/dist/cjs/package/utilities.d.ts:10
+
+___
+
+### flattenTemplateSelect
+
+▸ **flattenTemplateSelect**(`actions`, `names?`): [`Select`](interfaces/Select.md)[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actions` | [`Action`](modules.md#action)[] |
+| `names?` | `string`[] |
+
+#### Returns
+
+[`Select`](interfaces/Select.md)[]
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/utilities.d.ts:11
+
+___
+
+### flattenTemplateTransforms
+
+▸ **flattenTemplateTransforms**(`actions`): [`Transform`](interfaces/Transform.md)[]
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `actions` | [`Action`](modules.md#action)[] |
+
+#### Returns
+
+[`Transform`](interfaces/Transform.md)[]
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/utilities.d.ts:12
 
 ___
 
@@ -789,7 +909,7 @@ ___
 
 #### Defined in
 
-[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/322fff5/yaml.ts#L170)
+[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/yaml.ts#L170)
 
 ___
 
@@ -809,7 +929,7 @@ ___
 
 #### Defined in
 
-[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/322fff5/template.ts#L40)
+[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/template.ts#L40)
 
 ___
 
@@ -833,7 +953,7 @@ A string containing the rendered jQuery expression result.
 
 #### Defined in
 
-[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/322fff5/render.ts#L8)
+[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/render.ts#L8)
 
 ___
 
@@ -859,7 +979,7 @@ The extraction result.
 
 #### Defined in
 
-[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/322fff5/select.ts#L20)
+[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/select.ts#L20)
 
 ___
 
@@ -885,7 +1005,7 @@ The transform result.
 
 #### Defined in
 
-[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/322fff5/transform.ts#L17)
+[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/transform.ts#L17)
 
 ___
 
@@ -905,7 +1025,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/lib/unwrap.d.ts:1
+node_modules/syphonx-core/dist/cjs/package/lib/unwrap.d.ts:1
 
 ___
 
@@ -934,4 +1054,4 @@ Modifies the input extract state in place and also returns it.
 
 #### Defined in
 
-[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/322fff5/validate.ts#L13)
+[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/validate.ts#L13)

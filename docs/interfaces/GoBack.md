@@ -17,7 +17,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/GoBack.d.ts:3
+node_modules/syphonx-core/dist/cjs/package/public/GoBack.d.ts:3
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/GoBack.d.ts:4
+node_modules/syphonx-core/dist/cjs/package/public/GoBack.d.ts:4

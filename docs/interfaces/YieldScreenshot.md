@@ -22,7 +22,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:33
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:33
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:31
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:31
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Yield.d.ts:32
+node_modules/syphonx-core/dist/cjs/package/public/Yield.d.ts:32

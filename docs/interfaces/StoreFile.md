@@ -25,7 +25,7 @@ The access level granted for the file or folder.
 
 #### Defined in
 
-[api.ts:85](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L85)
+[api.ts:85](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L85)
 
 ___
 
@@ -37,7 +37,7 @@ The hash of the file or folder.
 
 #### Defined in
 
-[api.ts:83](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L83)
+[api.ts:83](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L83)
 
 ___
 
@@ -49,7 +49,7 @@ The name of the file or folder.
 
 #### Defined in
 
-[api.ts:75](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L75)
+[api.ts:75](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L75)
 
 ___
 
@@ -61,7 +61,7 @@ The size of the file or folder in bytes.
 
 #### Defined in
 
-[api.ts:81](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L81)
+[api.ts:81](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L81)
 
 ___
 
@@ -73,7 +73,7 @@ The last modified timestamp of the file or folder.
 
 #### Defined in
 
-[api.ts:77](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L77)
+[api.ts:77](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L77)
 
 ___
 
@@ -85,4 +85,4 @@ The type of the object, either a file or a folder.
 
 #### Defined in
 
-[api.ts:79](https://github.com/dtempx/syphonx-lib/blob/322fff5/api.ts#L79)
+[api.ts:79](https://github.com/dtempx/syphonx-lib/blob/4fe11ca/api.ts#L79)

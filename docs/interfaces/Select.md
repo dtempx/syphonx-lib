@@ -45,7 +45,7 @@
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:7
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:7
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:12
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:12
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:13
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:13
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:14
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:14
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:10
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:10
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:8
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:8
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:9
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:9
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:20
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:20
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:15
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:15
 
 ___
 
@@ -167,7 +167,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:11
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:11
 
 ___
 
@@ -181,7 +181,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:4
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:4
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:3
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:3
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:16
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:16
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:21
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:21
 
 ___
 
@@ -229,7 +229,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:22
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:22
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:5
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:5
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:23
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:23
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:24
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:24
 
 ___
 
@@ -277,7 +277,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:6
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:6
 
 ___
 
@@ -291,4 +291,4 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/extract/public/Select.d.ts:17
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:17
