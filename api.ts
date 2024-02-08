@@ -105,20 +105,23 @@ export class SyphonXApi {
     apiKey?: string;
     headers?: Record<string, string>;
     url: string;
+    user?: string;
 
     /**
      * Constructs a new instance of the SyphonX API.
      *
      * @param apiKey - The API key to authenticate with the SyphonX API.
      * @param url - The base URL of the SyphonX API. Defaults to the `defaultUrl`.
+     * @param user - The email address of the user interacting with the SyphonX API.
      */
-    constructor(apiKey?: string, url?: string) {
+    constructor(apiKey?: string, url?: string, user?: string) {
         this.apiKey = apiKey;
         if (apiKey)
             this.headers = { "Authorization": `Bearer ${this.apiKey}` };
         this.url = url || defaultUrl;
         if (this.url.endsWith("/"))
             this.url = this.url.slice(0, -1);
+        this.user = user;
     }
 
     /**
@@ -362,7 +365,8 @@ export class SyphonXApi {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const file = await request.json(`${this.url}/template/${name}?write`);
+        const options = !!this.user ? { method: "GET", headers: { user: this.user } } : { method: "GET", headers: {} };
+        const file = await request.json(`${this.url}/template/${name}?write`, options as request.RequestOptions);
         if (hash && hash !== file.hash)
             throw new ErrorMessage(`File ${name} has been modified since last save`);
         await request.putJson(file.url, content, { headers });
