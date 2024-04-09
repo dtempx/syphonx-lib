@@ -28,7 +28,7 @@ List of accessible directories with delete permissions.
 
 #### Defined in
 
-[api.ts:28](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L28)
+[api.ts:28](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L28)
 
 ___
 
@@ -40,7 +40,7 @@ List of accessible features.
 
 #### Defined in
 
-[api.ts:30](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L30)
+[api.ts:30](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L30)
 
 ___
 
@@ -52,7 +52,7 @@ The name of the authenticated user.
 
 #### Defined in
 
-[api.ts:22](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L22)
+[api.ts:22](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L22)
 
 ___
 
@@ -64,7 +64,7 @@ List of accessible directories with read permissions.
 
 #### Defined in
 
-[api.ts:24](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L24)
+[api.ts:24](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L24)
 
 ___
 
@@ -76,4 +76,4 @@ List of accessible directories with write permissions.
 
 #### Defined in
 
-[api.ts:26](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L26)
+[api.ts:26](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L26)

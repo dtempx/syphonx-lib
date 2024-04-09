@@ -341,7 +341,7 @@ Identifies the type of informaation to be logged.
 
 #### Defined in
 
-[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L49)
+[api.ts:55](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L55)
 
 ___
 
@@ -784,7 +784,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/e986e76/template.ts#L12)
+[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/template.ts#L12)
 
 ___
 
@@ -808,7 +808,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/e986e76/template.ts#L30)
+[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/template.ts#L30)
 
 ___
 
@@ -996,7 +996,7 @@ ___
 
 #### Defined in
 
-[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/e986e76/yaml.ts#L170)
+[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/yaml.ts#L170)
 
 ___
 
@@ -1016,7 +1016,7 @@ ___
 
 #### Defined in
 
-[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/e986e76/template.ts#L40)
+[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/template.ts#L40)
 
 ___
 
@@ -1040,7 +1040,7 @@ A string containing the rendered jQuery expression result.
 
 #### Defined in
 
-[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/e986e76/render.ts#L8)
+[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/render.ts#L8)
 
 ___
 
@@ -1066,7 +1066,7 @@ The extraction result.
 
 #### Defined in
 
-[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/e986e76/select.ts#L20)
+[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/select.ts#L20)
 
 ___
 
@@ -1092,7 +1092,7 @@ The transform result.
 
 #### Defined in
 
-[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/e986e76/transform.ts#L17)
+[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/transform.ts#L17)
 
 ___
 
@@ -1141,4 +1141,4 @@ Modifies the input extract state in place and also returns it.
 
 #### Defined in
 
-[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/e986e76/validate.ts#L13)
+[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/validate.ts#L13)

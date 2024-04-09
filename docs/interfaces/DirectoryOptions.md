@@ -21,7 +21,7 @@ Filter the result using the specified file globbing pattern.
 
 #### Defined in
 
-[api.ts:106](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L106)
+[api.ts:112](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L112)
 
 ___
 
@@ -33,7 +33,7 @@ The path to the directory to list, lists from the root if not specified.
 
 #### Defined in
 
-[api.ts:102](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L102)
+[api.ts:108](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L108)
 
 ___
 
@@ -45,7 +45,7 @@ Filter the result using the specified regular expression.
 
 #### Defined in
 
-[api.ts:104](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L104)
+[api.ts:110](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L110)
 
 ___
 
@@ -57,4 +57,4 @@ Filter the result using the specified url.
 
 #### Defined in
 
-[api.ts:108](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L108)
+[api.ts:114](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L114)

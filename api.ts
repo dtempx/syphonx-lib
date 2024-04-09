@@ -31,16 +31,22 @@ export interface Auth {
 }
 
 export interface FileMetadata {
-    /** The storage name of the contract. */
+    /** A unique identifier for the revision. */
+    key?: string;
+    /** The storage name of the file. */
     name: string;
-    /** An MD5 hash of the contract file contents. Used to determine whether the contract has changed since last read. */
+    /** An MD5 hash of the file contents. Used to determine whether the file has changed since last read. */
     hash: string;
     /** The storage name of the contract associated with a template. */
     contract?: string;
-    /** Date contract was created. */
+    /** Date file was created. */
     createdAt: Date;
-    /** Date contract was last modified. */
+    /** Identifies user who created the file.  */
+    createdBy?: string;
+    /** Date file was last modified. */
     modifiedAt: Date;
+    /** Identifies user who modified the file.  */
+    modifiedBy?: string;
 }
 
 /**
@@ -262,6 +268,21 @@ export class SyphonXApi {
             modifiedAt: new Date(obj.modifiedAt)
         };
         return [content, metadata];
+    }
+
+    async revisions(name: string): Promise<FileMetadata[]> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
+        const headers = this.headers;
+        const result = await request.json(`${this.url}/revisions/${name}`, { headers }) as FileMetadata[];
+        return result;
+    }
+
+    async rollback(name: string, key: string): Promise<void> {
+        if (name.startsWith("/"))
+            name = name.slice(1);
+        const headers = this.headers;
+        await request.json(`${this.url}/rollback/${name}?key=${key}`, { headers }) as FileMetadata[];
     }
 
     /**
