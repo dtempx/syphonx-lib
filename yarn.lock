@@ -746,10 +746,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-syphonx-core@^1.2.64:
-  version "1.2.64"
-  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.64.tgz#64a053d9a113d3ad890193c36c4a5aeec3274dce"
-  integrity sha512-B2AzcWPUcx9Fyk4Ebte/hFe/QwmNwBDKFQESjb0AL/jKfp2DJDULSkQ3JVMPxai3Az3ums8hJI1YuptLwJmCqw==
+syphonx-core@^1.2.67:
+  version "1.2.67"
+  resolved "https://registry.yarnpkg.com/syphonx-core/-/syphonx-core-1.2.67.tgz#1be563164610501ebd4958464d181c80d42f377a"
+  integrity sha512-aItOwiiR0k6/y2jcz4jSXkIJxLp7m2ZXVEpT7Kn+tgc+rbtEw9Abpj7SgXaPAILyPQaPtgyiVI2W/XjKpQskNg==
 
 to-regex-range@^5.0.1:
   version "5.0.1"

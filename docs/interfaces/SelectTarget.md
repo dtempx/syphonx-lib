@@ -14,6 +14,7 @@
 
 - [all](SelectTarget.md#all)
 - [collate](SelectTarget.md#collate)
+- [comment](SelectTarget.md#comment)
 - [context](SelectTarget.md#context)
 - [distinct](SelectTarget.md#distinct)
 - [format](SelectTarget.md#format)
@@ -26,6 +27,7 @@
 - [removeNulls](SelectTarget.md#removenulls)
 - [select](SelectTarget.md#select)
 - [value](SelectTarget.md#value)
+- [waitfor](SelectTarget.md#waitfor)
 - [when](SelectTarget.md#when)
 
 ## Properties
@@ -50,13 +52,23 @@ node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:12
 
 ___
 
+### comment
+
+• `Optional` **comment**: `string`
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:13
+
+___
+
 ### context
 
 • `Optional` **context**: ``null`` \| `number`
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:13
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:14
 
 ___
 
@@ -66,7 +78,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:14
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:15
 
 ___
 
@@ -106,7 +118,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:15
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:16
 
 ___
 
@@ -146,7 +158,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:16
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:17
 
 ___
 
@@ -170,10 +182,20 @@ node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:6
 
 ___
 
+### waitfor
+
+• `Optional` **waitfor**: `boolean`
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:18
+
+___
+
 ### when
 
 • `Optional` **when**: `string`
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:17
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:19

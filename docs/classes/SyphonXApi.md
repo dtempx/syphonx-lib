@@ -49,7 +49,7 @@ Constructs a new instance of the SyphonX API.
 
 #### Defined in
 
-[api.ts:117](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L117)
+[api.ts:128](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L128)
 
 ## Properties
 
@@ -59,7 +59,7 @@ Constructs a new instance of the SyphonX API.
 
 #### Defined in
 
-[api.ts:105](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L105)
+[api.ts:116](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L116)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[api.ts:106](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L106)
+[api.ts:117](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L117)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[api.ts:107](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L107)
+[api.ts:118](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L118)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[api.ts:108](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L108)
+[api.ts:119](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L119)
 
 ## Methods
 
@@ -107,7 +107,7 @@ A Promise resolving to the Auth object.
 
 #### Defined in
 
-[api.ts:132](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L132)
+[api.ts:143](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L143)
 
 ___
 
@@ -132,7 +132,7 @@ A Promise resolving to the selected selector.
 
 #### Defined in
 
-[api.ts:145](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L145)
+[api.ts:156](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L156)
 
 ___
 
@@ -154,15 +154,21 @@ Deletes a file from the cloud.
 
 #### Defined in
 
-[api.ts:156](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L156)
+[api.ts:167](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L167)
 
 ___
 
 ### directory
 
-▸ **directory**(): `Promise`<[`StoreFile`](../interfaces/StoreFile.md)[]\>
+▸ **directory**(`«destructured»?`): `Promise`<[`StoreFile`](../interfaces/StoreFile.md)[]\>
 
 Retrieves the list of accessible files and folders in the store.
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | [`DirectoryOptions`](../interfaces/DirectoryOptions.md) |
 
 #### Returns
 
@@ -172,7 +178,7 @@ A Promise resolving to an array of accessible store files.
 
 #### Defined in
 
-[api.ts:169](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L169)
+[api.ts:180](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L180)
 
 ___
 
@@ -196,7 +202,7 @@ A Promise resolving to a TemplateFileInfo object.
 
 #### Defined in
 
-[api.ts:182](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L182)
+[api.ts:196](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L196)
 
 ___
 
@@ -220,7 +226,7 @@ A Promise resolving to a boolean indicating whether the log was successful.
 
 #### Defined in
 
-[api.ts:214](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L214)
+[api.ts:228](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L228)
 
 ___
 
@@ -244,7 +250,7 @@ A Promise resolving to a tuple with the file content and metadata.
 
 #### Defined in
 
-[api.ts:231](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L231)
+[api.ts:245](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L245)
 
 ___
 
@@ -268,7 +274,7 @@ The extraction result.
 
 #### Defined in
 
-[api.ts:252](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L252)
+[api.ts:266](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L266)
 
 ___
 
@@ -292,7 +298,7 @@ Use `loadTemplate` instead.
 
 #### Defined in
 
-[api.ts:346](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L346)
+[api.ts:360](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L360)
 
 ___
 
@@ -318,4 +324,4 @@ A Promise resolving when the write operation is complete.
 
 #### Defined in
 
-[api.ts:364](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L364)
+[api.ts:378](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L378)

@@ -14,6 +14,7 @@
 - [Auth](interfaces/Auth.md)
 - [Break](interfaces/Break.md)
 - [Click](interfaces/Click.md)
+- [DirectoryOptions](interfaces/DirectoryOptions.md)
 - [Each](interfaces/Each.md)
 - [Error](interfaces/Error.md)
 - [ExtractError](interfaces/ExtractError.md)
@@ -24,6 +25,7 @@
 - [FlatAction](interfaces/FlatAction.md)
 - [GoBack](interfaces/GoBack.md)
 - [HostOptions](interfaces/HostOptions.md)
+- [KeyPress](interfaces/KeyPress.md)
 - [LoadTemplateResult](interfaces/LoadTemplateResult.md)
 - [Locator](interfaces/Locator.md)
 - [LogData](interfaces/LogData.md)
@@ -61,8 +63,12 @@
 - [DocumentLoadState](modules.md#documentloadstate)
 - [EachAction](modules.md#eachaction)
 - [ErrorAction](modules.md#erroraction)
+- [EvaluateArg](modules.md#evaluatearg)
+- [EvaluateFunction](modules.md#evaluatefunction)
+- [EvaluateResult](modules.md#evaluateresult)
 - [ExtractErrorCode](modules.md#extracterrorcode)
 - [GoBackAction](modules.md#gobackaction)
+- [KeyPressAction](modules.md#keypressaction)
 - [LocatorAction](modules.md#locatoraction)
 - [LocatorMethod](modules.md#locatormethod)
 - [LogDataType](modules.md#logdatatype)
@@ -98,6 +104,7 @@
 - [\_select](modules.md#_select)
 - [\_transform](modules.md#_transform)
 - [evaluateFormula](modules.md#evaluateformula)
+- [evaluator](modules.md#evaluator)
 - [extract](modules.md#extract)
 - [extractSync](modules.md#extractsync)
 - [fetchTemplate](modules.md#fetchtemplate)
@@ -122,21 +129,21 @@
 
 ### Action
 
-Ƭ **Action**: [`BreakAction`](modules.md#breakaction) \| [`ClickAction`](modules.md#clickaction) \| [`EachAction`](modules.md#eachaction) \| [`ErrorAction`](modules.md#erroraction) \| [`GoBackAction`](modules.md#gobackaction) \| [`LocatorAction`](modules.md#locatoraction) \| [`NavigateAction`](modules.md#navigateaction) \| [`ReloadAction`](modules.md#reloadaction) \| [`RepeatAction`](modules.md#repeataction) \| [`ScreenshotAction`](modules.md#screenshotaction) \| [`ScrollAction`](modules.md#scrollaction) \| [`SelectAction`](modules.md#selectaction) \| [`SnoozeAction`](modules.md#snoozeaction) \| [`SwitchAction`](modules.md#switchaction) \| [`TransformAction`](modules.md#transformaction) \| [`WaitForAction`](modules.md#waitforaction) \| [`YieldAction`](modules.md#yieldaction)
+Ƭ **Action**: [`BreakAction`](modules.md#breakaction) \| [`ClickAction`](modules.md#clickaction) \| [`EachAction`](modules.md#eachaction) \| [`ErrorAction`](modules.md#erroraction) \| [`GoBackAction`](modules.md#gobackaction) \| [`KeyPressAction`](modules.md#keypressaction) \| [`LocatorAction`](modules.md#locatoraction) \| [`NavigateAction`](modules.md#navigateaction) \| [`ReloadAction`](modules.md#reloadaction) \| [`RepeatAction`](modules.md#repeataction) \| [`ScreenshotAction`](modules.md#screenshotaction) \| [`ScrollAction`](modules.md#scrollaction) \| [`SelectAction`](modules.md#selectaction) \| [`SnoozeAction`](modules.md#snoozeaction) \| [`SwitchAction`](modules.md#switchaction) \| [`TransformAction`](modules.md#transformaction) \| [`WaitForAction`](modules.md#waitforaction) \| [`YieldAction`](modules.md#yieldaction)
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:18
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:19
 
 ___
 
 ### ActionType
 
-Ƭ **ActionType**: ``"break"`` \| ``"click"`` \| ``"each"`` \| ``"error"`` \| ``"goback"`` \| ``"locator"`` \| ``"navigate"`` \| ``"reload"`` \| ``"repeat"`` \| ``"screenshot"`` \| ``"scroll"`` \| ``"select"`` \| ``"snooze"`` \| ``"switch"`` \| ``"transform"`` \| ``"waitfor"`` \| ``"yield"``
+Ƭ **ActionType**: ``"break"`` \| ``"click"`` \| ``"each"`` \| ``"error"`` \| ``"goback"`` \| ``"locator"`` \| ``"keypress"`` \| ``"navigate"`` \| ``"reload"`` \| ``"repeat"`` \| ``"screenshot"`` \| ``"scroll"`` \| ``"select"`` \| ``"snooze"`` \| ``"switch"`` \| ``"transform"`` \| ``"waitfor"`` \| ``"yield"``
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:70
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:74
 
 ___
 
@@ -152,7 +159,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:19
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:20
 
 ___
 
@@ -168,7 +175,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:22
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:23
 
 ___
 
@@ -194,7 +201,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:25
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:26
 
 ___
 
@@ -210,7 +217,51 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:28
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:29
+
+___
+
+### EvaluateArg
+
+Ƭ **EvaluateArg**: [`ExtractState`](interfaces/ExtractState.md) \| { `select`: [`Select`](interfaces/Select.md)[]  } \| { `transform`: [`Transform`](interfaces/Transform.md)[]  } \| { `sync`: [`ExtractState`](interfaces/ExtractState.md)  }
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/host.d.ts:40
+
+___
+
+### EvaluateFunction
+
+Ƭ **EvaluateFunction**: (`arg`: [`EvaluateArg`](modules.md#evaluatearg)) => `Promise`<[`EvaluateResult`](modules.md#evaluateresult)\>
+
+#### Type declaration
+
+▸ (`arg`): `Promise`<[`EvaluateResult`](modules.md#evaluateresult)\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `arg` | [`EvaluateArg`](modules.md#evaluatearg) |
+
+##### Returns
+
+`Promise`<[`EvaluateResult`](modules.md#evaluateresult)\>
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/host.d.ts:48
+
+___
+
+### EvaluateResult
+
+Ƭ **EvaluateResult**: [`ExtractState`](interfaces/ExtractState.md)
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/host.d.ts:47
 
 ___
 
@@ -236,7 +287,23 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:31
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:32
+
+___
+
+### KeyPressAction
+
+Ƭ **KeyPressAction**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `keypress` | [`KeyPress`](interfaces/KeyPress.md) |
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:35
 
 ___
 
@@ -252,7 +319,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:34
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:38
 
 ___
 
@@ -274,7 +341,7 @@ Identifies the type of informaation to be logged.
 
 #### Defined in
 
-[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/5494802/api.ts#L49)
+[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L49)
 
 ___
 
@@ -290,7 +357,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:37
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:41
 
 ___
 
@@ -306,7 +373,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:40
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:44
 
 ___
 
@@ -322,7 +389,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:43
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:47
 
 ___
 
@@ -338,7 +405,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:46
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:50
 
 ___
 
@@ -354,7 +421,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:49
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:53
 
 ___
 
@@ -380,7 +447,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:52
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:56
 
 ___
 
@@ -390,7 +457,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:31
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:33
 
 ___
 
@@ -400,7 +467,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:32
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:34
 
 ___
 
@@ -410,7 +477,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:27
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:29
 
 ___
 
@@ -420,7 +487,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:28
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:30
 
 ___
 
@@ -430,7 +497,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:30
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:32
 
 ___
 
@@ -440,7 +507,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:29
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:31
 
 ___
 
@@ -450,7 +517,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:26
+node_modules/syphonx-core/dist/cjs/package/public/Select.d.ts:28
 
 ___
 
@@ -466,7 +533,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:55
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:59
 
 ___
 
@@ -502,7 +569,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:58
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:62
 
 ___
 
@@ -518,7 +585,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:61
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:65
 
 ___
 
@@ -534,7 +601,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:64
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:68
 
 ___
 
@@ -560,7 +627,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:67
+node_modules/syphonx-core/dist/cjs/package/public/Action.d.ts:71
 
 ## Variables
 
@@ -637,6 +704,26 @@ node_modules/syphonx-core/dist/cjs/package/lib/formula.d.ts:1
 
 ___
 
+### evaluator
+
+▸ **evaluator**(`arg`): `Promise`<[`ExtractState`](interfaces/ExtractState.md)\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `arg` | [`EvaluateArg`](modules.md#evaluatearg) |
+
+#### Returns
+
+`Promise`<[`ExtractState`](interfaces/ExtractState.md)\>
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/host.d.ts:48
+
+___
+
 ### extract
 
 ▸ **extract**(`state`): `Promise`<[`ExtractState`](interfaces/ExtractState.md)\>
@@ -697,7 +784,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/5494802/template.ts#L12)
+[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/82af0d6/template.ts#L12)
 
 ___
 
@@ -721,7 +808,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/5494802/template.ts#L30)
+[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/82af0d6/template.ts#L30)
 
 ___
 
@@ -909,7 +996,7 @@ ___
 
 #### Defined in
 
-[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/5494802/yaml.ts#L170)
+[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/82af0d6/yaml.ts#L170)
 
 ___
 
@@ -929,7 +1016,7 @@ ___
 
 #### Defined in
 
-[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/5494802/template.ts#L40)
+[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/82af0d6/template.ts#L40)
 
 ___
 
@@ -953,7 +1040,7 @@ A string containing the rendered jQuery expression result.
 
 #### Defined in
 
-[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/5494802/render.ts#L8)
+[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/82af0d6/render.ts#L8)
 
 ___
 
@@ -979,7 +1066,7 @@ The extraction result.
 
 #### Defined in
 
-[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/5494802/select.ts#L20)
+[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/82af0d6/select.ts#L20)
 
 ___
 
@@ -1005,7 +1092,7 @@ The transform result.
 
 #### Defined in
 
-[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/5494802/transform.ts#L17)
+[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/82af0d6/transform.ts#L17)
 
 ___
 
@@ -1054,4 +1141,4 @@ Modifies the input extract state in place and also returns it.
 
 #### Defined in
 
-[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/5494802/validate.ts#L13)
+[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/82af0d6/validate.ts#L13)

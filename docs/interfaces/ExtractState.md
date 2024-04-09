@@ -21,6 +21,7 @@
 - [originalUrl](ExtractState.md#originalurl)
 - [params](ExtractState.md#params)
 - [root](ExtractState.md#root)
+- [timeout](ExtractState.md#timeout)
 - [unpatch](ExtractState.md#unpatch)
 - [url](ExtractState.md#url)
 - [vars](ExtractState.md#vars)
@@ -45,7 +46,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:18
+node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:19
 
 ___
 
@@ -115,7 +116,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:19
+node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:20
 
 ___
 
@@ -139,13 +140,23 @@ node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:17
 
 ___
 
+### timeout
+
+• `Optional` **timeout**: `number`
+
+#### Defined in
+
+node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:18
+
+___
+
 ### unpatch
 
 • **unpatch**: `string`[]
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:20
+node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:21
 
 ___
 
@@ -175,7 +186,7 @@ ___
 
 #### Defined in
 
-node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:21
+node_modules/syphonx-core/dist/cjs/package/public/ExtractState.d.ts:22
 
 ___
 

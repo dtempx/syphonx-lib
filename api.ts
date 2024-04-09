@@ -97,6 +97,17 @@ export interface LoadTemplateResult {
     metadata: FileMetadata;
 }
 
+export interface DirectoryOptions {
+    /** The path to the directory to list, lists from the root if not specified. */
+    path?: string;
+
+    /** Filter the result using the specified regular expression. */
+    regex?: string;
+
+    /** Filter the result using the specified file globbing pattern. */
+    glob?: string;
+}
+
 /**
  * Provides access for reading and writing templates and contracts in the SyphonX cloud store,
  * as well as access to additional SyphonX features available on the cloud.
@@ -160,15 +171,18 @@ export class SyphonXApi {
         const { url } = await request.json(`${this.url}/template/${name}?delete`) as { url: string };
         await request.delete(url, { headers });
     }
-    
+
     /**
      * Retrieves the list of accessible files and folders in the store.
      *
      * @returns A Promise resolving to an array of accessible store files.
      */
-    async directory(): Promise<StoreFile[]> {
+    async directory({ path = "", regex, glob }: DirectoryOptions = {}): Promise<StoreFile[]> {
+        if (path.startsWith("/"))
+            path = path.slice(1);
         const headers = this.headers;
-        const files = await request.json(`${this.url}/templates`, { headers }) as StoreFile[];
+        const url = `${this.url}/templates/${path}${regex ? `?regex=${encodeURIComponent(regex)}` : glob ? `?glob=${encodeURIComponent(glob)}` : ""}`;
+        const files = await request.json(url, { headers }) as StoreFile[];
         files.forEach(file => file.timestamp = new Date(file.timestamp));
         return files;    
     }
