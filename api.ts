@@ -100,12 +100,12 @@ export interface LoadTemplateResult {
 export interface DirectoryOptions {
     /** The path to the directory to list, lists from the root if not specified. */
     path?: string;
-
     /** Filter the result using the specified regular expression. */
     regex?: string;
-
     /** Filter the result using the specified file globbing pattern. */
     glob?: string;
+    /** Filter the result using the specified url. */
+    url?: string;
 }
 
 /**
@@ -177,11 +177,17 @@ export class SyphonXApi {
      *
      * @returns A Promise resolving to an array of accessible store files.
      */
-    async directory({ path = "", regex, glob }: DirectoryOptions = {}): Promise<StoreFile[]> {
+    async directory({ path = "", ...options }: DirectoryOptions = {}): Promise<StoreFile[]> {
         if (path.startsWith("/"))
             path = path.slice(1);
         const headers = this.headers;
-        const url = `${this.url}/templates/${path}${regex ? `?regex=${encodeURIComponent(regex)}` : glob ? `?glob=${encodeURIComponent(glob)}` : ""}`;
+        let url = `${this.url}/templates/${path}`;
+        if (options.regex)
+            url += `?regex=${encodeURIComponent(options.regex)}`;
+        else if (options.glob)
+            url += `?glob=${encodeURIComponent(options.glob)}`;
+        else if (options.url)
+            url += `?url=${encodeURIComponent(options.url)}`;
         const files = await request.json(url, { headers }) as StoreFile[];
         files.forEach(file => file.timestamp = new Date(file.timestamp));
         return files;    

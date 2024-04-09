@@ -49,7 +49,7 @@ Constructs a new instance of the SyphonX API.
 
 #### Defined in
 
-[api.ts:128](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L128)
+[api.ts:128](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L128)
 
 ## Properties
 
@@ -59,7 +59,7 @@ Constructs a new instance of the SyphonX API.
 
 #### Defined in
 
-[api.ts:116](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L116)
+[api.ts:116](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L116)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[api.ts:117](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L117)
+[api.ts:117](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L117)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[api.ts:118](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L118)
+[api.ts:118](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L118)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[api.ts:119](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L119)
+[api.ts:119](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L119)
 
 ## Methods
 
@@ -107,7 +107,7 @@ A Promise resolving to the Auth object.
 
 #### Defined in
 
-[api.ts:143](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L143)
+[api.ts:143](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L143)
 
 ___
 
@@ -132,7 +132,7 @@ A Promise resolving to the selected selector.
 
 #### Defined in
 
-[api.ts:156](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L156)
+[api.ts:156](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L156)
 
 ___
 
@@ -154,7 +154,7 @@ Deletes a file from the cloud.
 
 #### Defined in
 
-[api.ts:167](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L167)
+[api.ts:167](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L167)
 
 ___
 
@@ -178,7 +178,7 @@ A Promise resolving to an array of accessible store files.
 
 #### Defined in
 
-[api.ts:180](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L180)
+[api.ts:180](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L180)
 
 ___
 
@@ -202,7 +202,7 @@ A Promise resolving to a TemplateFileInfo object.
 
 #### Defined in
 
-[api.ts:196](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L196)
+[api.ts:202](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L202)
 
 ___
 
@@ -226,7 +226,7 @@ A Promise resolving to a boolean indicating whether the log was successful.
 
 #### Defined in
 
-[api.ts:228](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L228)
+[api.ts:234](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L234)
 
 ___
 
@@ -250,7 +250,7 @@ A Promise resolving to a tuple with the file content and metadata.
 
 #### Defined in
 
-[api.ts:245](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L245)
+[api.ts:251](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L251)
 
 ___
 
@@ -274,7 +274,7 @@ The extraction result.
 
 #### Defined in
 
-[api.ts:266](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L266)
+[api.ts:272](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L272)
 
 ___
 
@@ -298,7 +298,7 @@ Use `loadTemplate` instead.
 
 #### Defined in
 
-[api.ts:360](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L360)
+[api.ts:366](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L366)
 
 ___
 
@@ -324,4 +324,4 @@ A Promise resolving when the write operation is complete.
 
 #### Defined in
 
-[api.ts:378](https://github.com/dtempx/syphonx-lib/blob/82af0d6/api.ts#L378)
+[api.ts:384](https://github.com/dtempx/syphonx-lib/blob/e986e76/api.ts#L384)
