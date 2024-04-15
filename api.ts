@@ -247,20 +247,22 @@ export class SyphonXApi {
             return false;
         }
     }
-    
+
     /**
      * Reads the content of a file from cloud storage.
      *
      * @param name - The storage path of the file to read.
+     * @param key - The key of the file revision to read.
      * @returns A Promise resolving to a tuple with the file content and metadata.
      */
-    async read(name: string): Promise<[string, FileMetadata]> {
+    async read(name: string, key?: string): Promise<[string, FileMetadata]> {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const obj = await request.json(`${this.url}/template/${name}?read`, { headers });
+        const obj = await request.json(`${this.url}/template/${name}?read${key ? `&key=${key}`: ""}`, { headers });
         const content = await request.text(obj.url, { headers });
         const metadata = {
+            key: obj.key,
             name: obj.name,
             hash: obj.hash,
             contract: obj.contractName,
