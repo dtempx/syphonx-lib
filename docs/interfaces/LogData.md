@@ -26,4 +26,4 @@ The key for the log data type.
 
 #### Defined in
 
-[api.ts:62](https://github.com/dtempx/syphonx-lib/blob/ebfa31f/api.ts#L62)
+[api.ts:62](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L62)
