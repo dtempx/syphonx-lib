@@ -23,7 +23,10 @@
             "internalConsoleOptions": "openOnSessionStart",
             "outputCapture": "std", // WORKAROUND https://github.com/microsoft/vscode/issues/19750
             "cwd": "${workspaceFolder}",
-            //"env": { "DEBUG": "1" },
+            "env": {
+                "DEBUG": "1",
+                "SYPHONX_API_URL": "http://localhost:8080"
+            },
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
                 "${workspaceFolder}/test/**/*.js",
@@ -42,7 +45,10 @@
             "internalConsoleOptions": "openOnSessionStart",
             "outputCapture": "std", // WORKAROUND https://github.com/microsoft/vscode/issues/19750
             "cwd": "${workspaceFolder}",
-            "env": { "DEBUG": "1" },
+            "env": {
+                "DEBUG": "1",
+                "SYPHONX_API_URL": "http://localhost:8080"
+            },
             "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
             "args": [
                 "${workspaceFolder}/test/**/*.js",
@@ -50,6 +56,29 @@
                 "--slow", "5000",
                 "--colors",
                 "--grep", "${selectedText}"
+            ]
+        },
+        {
+            "name": "Run One Test",
+            "type": "node",
+            "request": "launch",
+            "skipFiles": ["<node_internals>/**"],
+            "outFiles": ["${workspaceFolder}/**/*.js"],
+            "sourceMaps": true,
+            "internalConsoleOptions": "openOnSessionStart",
+            "outputCapture": "std", // WORKAROUND https://github.com/microsoft/vscode/issues/19750
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "DEBUG": "1",
+                "SYPHONX_API_URL": "http://localhost:8080"
+            },
+            "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+            "args": [
+                "${workspaceFolder}/test/**/*.js",
+                "--timeout", "999999",
+                "--slow", "5000",
+                "--colors",
+                "--grep", "read\\('examples/example.json'\\)"
             ]
         }
     ]

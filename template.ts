@@ -1,5 +1,6 @@
 import * as yaml from "js-yaml";
 import JSON5 from "json5";
+import { Schema } from "jsonschema";
 import { Template } from "syphonx-core";
 import { combineUrl, ErrorMessage } from "./utilities.js";
 import { yamlToJson } from "./yaml.js";
@@ -53,5 +54,14 @@ export function parseTemplate(text: string): Template {
         const obj = yaml.load(text) as any;
         const template = yamlToJson(obj);
         return template;
+    }
+}
+
+export function parseContract(text: unknown): Schema | undefined {
+    if (typeof text === "string") {
+        try {
+            return JSON5.parse(text);
+        }
+        catch (err) {}
     }
 }

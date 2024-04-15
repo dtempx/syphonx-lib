@@ -1,6 +1,5 @@
-import JSON5 from "json5";
 import { isFormula, merge, request, MemCache, Timer } from "./lib/index.js";
-import { parseTemplate } from "./template.js";
+import { parseContract, parseTemplate } from "./template.js";
 import { Schema } from "jsonschema";
 import { unwrap, Metrics, Template } from "syphonx-core";
 import { ErrorMessage } from "./utilities.js";
@@ -9,7 +8,7 @@ import { evaluateFormula } from "syphonx-core";
 import * as cheerio from "cheerio";
 import * as syphonx from "syphonx-core";
 
-const defaultUrl = "https://api.syphonx.io";
+const defaultUrl = process.env.SYPHONX_API_URL || "https://api.syphonx.io";
 const templateCacheTTL = 5 * 60 * 1000; // 5 minutes
 const memcache = new MemCache();
 
@@ -31,12 +30,14 @@ export interface Auth {
 }
 
 export interface FileMetadata {
-    /** A unique identifier for the revision. */
-    key?: string;
     /** The storage name of the file. */
     name: string;
     /** An MD5 hash of the file contents. Used to determine whether the file has changed since last read. */
     hash: string;
+    /** A unique identifier for the revision. */
+    revision: string;
+    /** The file size in bytes. */
+    size: string;
     /** The storage name of the contract associated with a template. */
     contract?: string;
     /** Date file was created. */
@@ -218,14 +219,8 @@ export class SyphonXApi {
 
         const result = {
             template: parseTemplate(data.json),
-            contract: tryParseJSON(data.contract),
-            metadata: {
-                name: data.name,
-                contract: data.contractName,
-                hash: data.hash,
-                createdAt: new Date(data.createdAt),
-                modifiedAt: new Date(data.modifiedAt)        
-            }
+            contract: parseContract(data.contract),
+            metadata: createMetadata(data)
         };
         memcache.write(name, result, templateCacheTTL);
         return result;
@@ -252,39 +247,31 @@ export class SyphonXApi {
      * Reads the content of a file from cloud storage.
      *
      * @param name - The storage path of the file to read.
-     * @param key - The key of the file revision to read.
-     * @returns A Promise resolving to a tuple with the file content and metadata.
+     * @param revision - Optional key of the file revision to read, loads the latest revision if not specified.
+     * @returns A Promise resolving to a tuple with the file content, metadata, and associated contract.
      */
-    async read(name: string, key?: string): Promise<[string, FileMetadata]> {
+    async read(name: string, revision?: string): Promise<[string, FileMetadata, string]> {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const obj = await request.json(`${this.url}/template/${name}?read${key ? `&key=${key}`: ""}`, { headers });
-        const content = await request.text(obj.url, { headers });
-        const metadata = {
-            key: obj.key,
-            name: obj.name,
-            hash: obj.hash,
-            contract: obj.contractName,
-            createdAt: new Date(obj.createdAt),
-            modifiedAt: new Date(obj.modifiedAt)
-        };
-        return [content, metadata];
+        const data = await request.json(`${this.url}/template/${name}?read${revision ? `&revision=${revision}`: ""}`, { headers });
+        const content = await request.text(data.url, { headers });
+        const metadata = createMetadata(data);
+        return [content, metadata, data.contract];
     }
 
+    /**
+     * Reads the list of revisions of a file from cloud storage.
+     * 
+     * @param name - The storage path of the file to read.
+     * @returns A Promise resolving to a list of revisions for the file.
+     */
     async revisions(name: string): Promise<FileMetadata[]> {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const result = await request.json(`${this.url}/revisions/${name}`, { headers }) as FileMetadata[];
-        return result;
-    }
-
-    async rollback(name: string, key: string): Promise<void> {
-        if (name.startsWith("/"))
-            name = name.slice(1);
-        const headers = this.headers;
-        await request.json(`${this.url}/rollback/${name}?key=${key}`, { headers }) as FileMetadata[];
+        const files = await request.json(`${this.url}/revisions/${name}`, { headers }) as FileMetadata[];
+        return files.map(file => createMetadata(file));
     }
 
     /**
@@ -416,11 +403,16 @@ export class SyphonXApi {
     }    
 }
 
-function tryParseJSON(text: unknown): any {
-    if (typeof text === "string") {
-        try {
-            return JSON5.parse(text);
-        }
-        catch (err) {}
-    }
+function createMetadata(obj: any) {
+    return {
+        name: obj.name,
+        hash: obj.hash,
+        revision: obj.revision,
+        size: obj.size,
+        contract: obj.contractName,
+        createdAt: new Date(obj.createdAt),
+        createdBy: obj.createdBy,
+        modifiedAt: new Date(obj.modifiedAt),
+        modifiedBy: obj.modifiedBy
+    };
 }
