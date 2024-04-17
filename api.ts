@@ -104,6 +104,9 @@ export interface LoadTemplateResult {
     metadata: FileMetadata;
 }
 
+/**
+ * Represents the options for listing a template directory.
+ */
 export interface DirectoryOptions {
     /** The path to the directory to list, lists from the root if not specified. */
     path?: string;
@@ -116,30 +119,46 @@ export interface DirectoryOptions {
 }
 
 /**
+ * Represents the options for constructing the SyphonX API object.
+ */
+export interface SyphonXApiOptions {
+    /** Override the SyphonX API URL. Defaults to api.syphonx.io. */
+    url?: string;
+    /** Specifies the app version. */
+    appVersion?: string;
+}
+
+/**
  * Provides access for reading and writing templates and contracts in the SyphonX cloud store,
  * as well as access to additional SyphonX features available on the cloud.
  */
 export class SyphonXApi {
-    apiKey?: string;
+    key?: string;
     headers?: Record<string, string>;
     url: string;
-    user?: string;
 
     /**
      * Constructs a new instance of the SyphonX API.
      *
-     * @param apiKey - The API key to authenticate with the SyphonX API.
-     * @param url - The base URL of the SyphonX API. Defaults to the `defaultUrl`.
-     * @param user - The email address of the user interacting with the SyphonX API.
+     * @param key - The API key to authenticate with the SyphonX API.
+     * @param options - Additional options for the SyphonX API.
      */
-    constructor(apiKey?: string, url?: string, user?: string) {
-        this.apiKey = apiKey;
-        if (apiKey)
-            this.headers = { "Authorization": `Bearer ${this.apiKey}` };
+    constructor(key?: string, options?: SyphonXApiOptions) {
+        let { url, appVersion } = typeof options === "object" ? options : {} as SyphonXApiOptions;
+        if (typeof arguments[1] === "string")
+            url = arguments[1];
+
+        this.key = key;
+        this.headers = {};
+
         this.url = url || defaultUrl;
         if (this.url.endsWith("/"))
             this.url = this.url.slice(0, -1);
-        this.user = user;
+
+        if (key)
+            this.headers["Authorization"] = `Bearer ${this.key}`;
+        if (appVersion)
+            this.headers["X-App-Version"] = appVersion;
     }
 
     /**
@@ -175,8 +194,8 @@ export class SyphonXApi {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const { url } = await request.json(`${this.url}/template/${name}?delete`) as { url: string };
-        await request.delete(url, { headers });
+        const file = await request.json(`${this.url}/template/${name}?delete`, { headers });
+        await request.delete(file.signedUrl);
     }
 
     /**
@@ -210,9 +229,9 @@ export class SyphonXApi {
         if (name.startsWith("/"))
             name = name.slice(1);
 
-        const cachedResult = memcache.read(name) as LoadTemplateResult;
-        if (cachedResult)
-            return cachedResult;
+        const cached = memcache.read(name) as LoadTemplateResult;
+        if (cached)
+            return cached;
 
         const headers = this.headers;
         const data = await request.json(`${this.url}/template/${name}`, { headers });
@@ -254,10 +273,10 @@ export class SyphonXApi {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const data = await request.json(`${this.url}/template/${name}?read${revision ? `&revision=${revision}`: ""}`, { headers });
-        const content = await request.text(data.url, { headers });
-        const metadata = createMetadata(data);
-        return [content, metadata, data.contract];
+        const file = await request.json(`${this.url}/template/${name}?read${revision ? `&revision=${revision}`: ""}`, { headers });
+        const content = await request.text(file.signedUrl);
+        const metadata = createMetadata(file);
+        return [content, metadata, file.contract];
     }
 
     /**
@@ -377,10 +396,9 @@ export class SyphonXApi {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const data = await request.json(`${this.url}/template/${name}`, { headers }) as any;
-        const { url, contract } = data;
-        const template = await request.text(url);
-        return { template, contract };
+        const file = await request.json(`${this.url}/template/${name}`, { headers }) as any;
+        const template = await request.text(file.signedUrl);
+        return { template, contract: file.contract };
     }
 
     /**
@@ -395,11 +413,10 @@ export class SyphonXApi {
         if (name.startsWith("/"))
             name = name.slice(1);
         const headers = this.headers;
-        const options = !!this.user ? { method: "GET", headers: { user: this.user } } : { method: "GET", headers: {} };
-        const file = await request.json(`${this.url}/template/${name}?write`, options as request.RequestOptions);
+        const file = await request.json(`${this.url}/template/${name}?write`, { headers });
         if (hash && hash !== file.hash)
             throw new ErrorMessage(`File ${name} has been modified since last save`);
-        await request.putJson(file.url, content, { headers });
+        await request.putJson(file.signedUrl, content, { headers: file.signedHeaders });
     }    
 }
 

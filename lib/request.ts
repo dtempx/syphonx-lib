@@ -18,7 +18,7 @@ export async function json<T = any>(url: string, { method = "GET", headers = {},
     return result;
 }
 
-export async function postJson(url: string, obj: unknown, { headers = {} }: BasicOptions): Promise<void> {
+export async function postJson(url: string, obj: unknown, { headers = {} }: BasicOptions = {}): Promise<void> {
     headers["Content-Type"] = "application/json";
     const body = formatBody(obj);
     const response = await fetch(url, { method: "POST", body, headers });
@@ -26,7 +26,7 @@ export async function postJson(url: string, obj: unknown, { headers = {} }: Basi
         throw new Error(`POST ${url} failed with status=${response.status} ${response.statusText}`);
 }
 
-export async function putJson(url: string, obj: unknown, { headers = {} }: BasicOptions): Promise<void> {
+export async function putJson(url: string, obj: unknown, { headers = {} }: BasicOptions = {}): Promise<void> {
     headers["Content-Type"] = "application/json";
     const body = formatBody(obj);
     const response = await fetch(url, { method: "PUT", body, headers });
@@ -44,7 +44,7 @@ export async function text(url: string, { method = "GET", headers = {}, obj }: R
 }
 
 export { _delete as delete };
-async function _delete(url: string, { headers = {} }: BasicOptions): Promise<void> {
+async function _delete(url: string, { headers = {} }: BasicOptions = {}): Promise<void> {
     const response = await fetch(url, { method: "DELETE", headers });
     if (!response.ok)
         throw new Error(`DELETE ${url} failed with status=${response.status} ${response.statusText}`);

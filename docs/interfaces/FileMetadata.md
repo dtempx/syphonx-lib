@@ -10,10 +10,11 @@
 - [createdAt](FileMetadata.md#createdat)
 - [createdBy](FileMetadata.md#createdby)
 - [hash](FileMetadata.md#hash)
-- [key](FileMetadata.md#key)
 - [modifiedAt](FileMetadata.md#modifiedat)
 - [modifiedBy](FileMetadata.md#modifiedby)
 - [name](FileMetadata.md#name)
+- [revision](FileMetadata.md#revision)
+- [size](FileMetadata.md#size)
 
 ## Properties
 
@@ -25,7 +26,7 @@ The storage name of the contract associated with a template.
 
 #### Defined in
 
-[api.ts:41](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L41)
+[api.ts:42](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L42)
 
 ___
 
@@ -37,7 +38,7 @@ Date file was created.
 
 #### Defined in
 
-[api.ts:43](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L43)
+[api.ts:44](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L44)
 
 ___
 
@@ -49,7 +50,7 @@ Identifies user who created the file.
 
 #### Defined in
 
-[api.ts:45](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L45)
+[api.ts:46](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L46)
 
 ___
 
@@ -61,19 +62,7 @@ An MD5 hash of the file contents. Used to determine whether the file has changed
 
 #### Defined in
 
-[api.ts:39](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L39)
-
-___
-
-### key
-
-• `Optional` **key**: `string`
-
-A unique identifier for the revision.
-
-#### Defined in
-
-[api.ts:35](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L35)
+[api.ts:36](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L36)
 
 ___
 
@@ -85,7 +74,7 @@ Date file was last modified.
 
 #### Defined in
 
-[api.ts:47](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L47)
+[api.ts:48](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L48)
 
 ___
 
@@ -97,7 +86,7 @@ Identifies user who modified the file.
 
 #### Defined in
 
-[api.ts:49](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L49)
+[api.ts:50](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L50)
 
 ___
 
@@ -109,4 +98,28 @@ The storage name of the file.
 
 #### Defined in
 
-[api.ts:37](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L37)
+[api.ts:34](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L34)
+
+___
+
+### revision
+
+• **revision**: `string`
+
+A unique identifier for the revision.
+
+#### Defined in
+
+[api.ts:38](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L38)
+
+___
+
+### size
+
+• **size**: `string`
+
+The file size in bytes.
+
+#### Defined in
+
+[api.ts:40](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L40)

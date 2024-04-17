@@ -43,7 +43,7 @@ A contract document to validate extracted data.
 
 #### Defined in
 
-[api.ts:69](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L69)
+[api.ts:70](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L70)
 
 ___
 
@@ -83,7 +83,7 @@ HTML content for extracting data offline.
 
 #### Defined in
 
-[api.ts:71](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L71)
+[api.ts:72](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L72)
 
 ___
 
@@ -332,7 +332,7 @@ In an online case, forces the data extraction to be performed outside of the bro
 
 #### Defined in
 
-[api.ts:73](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L73)
+[api.ts:74](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L74)
 
 ___
 
@@ -386,7 +386,7 @@ Cloud path to template or a template document.
 
 #### Defined in
 
-[api.ts:67](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L67)
+[api.ts:68](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L68)
 
 ___
 

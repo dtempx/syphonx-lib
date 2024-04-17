@@ -5,7 +5,7 @@ import { SyphonXApi } from "../../api.js";
 
 chai.use(chaiAsPromised);
 
-describe("SyphonXApi/templates", () => {
+describe("SyphonXApi/revisions", () => {
     const api = new SyphonXApi();
 
     it("revisions", async () => {

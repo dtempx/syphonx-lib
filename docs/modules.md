@@ -43,6 +43,7 @@
 - [Snooze](interfaces/Snooze.md)
 - [StoreFile](interfaces/StoreFile.md)
 - [Switch](interfaces/Switch.md)
+- [SyphonXApiOptions](interfaces/SyphonXApiOptions.md)
 - [Template](interfaces/Template.md)
 - [Transform](interfaces/Transform.md)
 - [TransformOptions](interfaces/TransformOptions.md)
@@ -117,6 +118,7 @@
 - [flattenTemplateTransforms](modules.md#flattentemplatetransforms)
 - [host](modules.md#host)
 - [invokeAsyncMethod](modules.md#invokeasyncmethod)
+- [parseContract](modules.md#parsecontract)
 - [parseJQuery](modules.md#parsejquery)
 - [parseTemplate](modules.md#parsetemplate)
 - [renderJQuery](modules.md#renderjquery)
@@ -341,7 +343,7 @@ Identifies the type of informaation to be logged.
 
 #### Defined in
 
-[api.ts:55](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L55)
+[api.ts:56](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L56)
 
 ___
 
@@ -784,7 +786,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:12](https://github.com/dtempx/syphonx-lib/blob/95a016c/template.ts#L12)
+[template.ts:13](https://github.com/dtempx/syphonx-lib/blob/d8651ed/template.ts#L13)
 
 ___
 
@@ -808,7 +810,7 @@ Use SyphonXApi instead.
 
 #### Defined in
 
-[template.ts:30](https://github.com/dtempx/syphonx-lib/blob/95a016c/template.ts#L30)
+[template.ts:31](https://github.com/dtempx/syphonx-lib/blob/d8651ed/template.ts#L31)
 
 ___
 
@@ -980,6 +982,26 @@ node_modules/syphonx-core/dist/cjs/host.d.ts:35
 
 ___
 
+### parseContract
+
+▸ **parseContract**(`text`): `Schema` \| `undefined`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `text` | `unknown` |
+
+#### Returns
+
+`Schema` \| `undefined`
+
+#### Defined in
+
+[template.ts:60](https://github.com/dtempx/syphonx-lib/blob/d8651ed/template.ts#L60)
+
+___
+
 ### parseJQuery
 
 ▸ **parseJQuery**(`text`): [`SelectQuery`](modules.md#selectquery) \| `undefined`
@@ -996,7 +1018,7 @@ ___
 
 #### Defined in
 
-[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/95a016c/yaml.ts#L170)
+[yaml.ts:170](https://github.com/dtempx/syphonx-lib/blob/d8651ed/yaml.ts#L170)
 
 ___
 
@@ -1016,7 +1038,7 @@ ___
 
 #### Defined in
 
-[template.ts:40](https://github.com/dtempx/syphonx-lib/blob/95a016c/template.ts#L40)
+[template.ts:41](https://github.com/dtempx/syphonx-lib/blob/d8651ed/template.ts#L41)
 
 ___
 
@@ -1040,7 +1062,7 @@ A string containing the rendered jQuery expression result.
 
 #### Defined in
 
-[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/95a016c/render.ts#L8)
+[render.ts:8](https://github.com/dtempx/syphonx-lib/blob/d8651ed/render.ts#L8)
 
 ___
 
@@ -1066,7 +1088,7 @@ The extraction result.
 
 #### Defined in
 
-[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/95a016c/select.ts#L20)
+[select.ts:20](https://github.com/dtempx/syphonx-lib/blob/d8651ed/select.ts#L20)
 
 ___
 
@@ -1092,7 +1114,7 @@ The transform result.
 
 #### Defined in
 
-[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/95a016c/transform.ts#L17)
+[transform.ts:17](https://github.com/dtempx/syphonx-lib/blob/d8651ed/transform.ts#L17)
 
 ___
 
@@ -1141,4 +1163,4 @@ Modifies the input extract state in place and also returns it.
 
 #### Defined in
 
-[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/95a016c/validate.ts#L13)
+[validate.ts:13](https://github.com/dtempx/syphonx-lib/blob/d8651ed/validate.ts#L13)

@@ -2,6 +2,8 @@
 
 # Interface: DirectoryOptions
 
+Represents the options for listing a template directory.
+
 ## Table of contents
 
 ### Properties
@@ -21,7 +23,7 @@ Filter the result using the specified file globbing pattern.
 
 #### Defined in
 
-[api.ts:112](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L112)
+[api.ts:116](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L116)
 
 ___
 
@@ -33,7 +35,7 @@ The path to the directory to list, lists from the root if not specified.
 
 #### Defined in
 
-[api.ts:108](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L108)
+[api.ts:112](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L112)
 
 ___
 
@@ -45,7 +47,7 @@ Filter the result using the specified regular expression.
 
 #### Defined in
 
-[api.ts:110](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L110)
+[api.ts:114](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L114)
 
 ___
 
@@ -57,4 +59,4 @@ Filter the result using the specified url.
 
 #### Defined in
 
-[api.ts:114](https://github.com/dtempx/syphonx-lib/blob/95a016c/api.ts#L114)
+[api.ts:118](https://github.com/dtempx/syphonx-lib/blob/d8651ed/api.ts#L118)
